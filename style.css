@@ -3,7 +3,11 @@
     background-size: cover;
     background-position: center;
 }
-
+.bg-register-image {
+    background-image: url(./assets/photo-dog-register.jpg);
+    background-size: cover;
+    background-position: center;
+}
 .form-control-user {
     font-size: 0.8rem;
     border-radius: 10rem;
