@@ -8,6 +8,11 @@
     background-size: cover;
     background-position: center;
 }
+.bg-password-image {
+    background-image: url(./assets/photo-dog-password.jpg);
+    background-size: cover;
+    background-position: center;    
+}
 .form-control-user {
     font-size: 0.8rem;
     border-radius: 10rem;
