@@ -1,33 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="./sb-admin-2.css">
     <script src="https://kit.fontawesome.com/dd602692de.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./style.css">
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
     <title>Document</title>
 </head>
-<body>
-    <div class="container">
-        <ul class="nav flex-column bg-gradient-primary">
-           <li class="nav-item">
-            <a href="#" class="nav-link">
-                <div class="">
-                    <i class="fas fa-laugh-wink fa-2x title-text"></i>
+
+<body id="page-top">
+    <div class="wrapper">
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionBar">
+            <a href="Index.html" class="sidebar-brand d-flex align-items-center justify-content-center">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="mx-3 title-text">SB Admin <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
             </a>
-           </li>
-            <hr>
-           <li class="nav-item">
-               <a href="#" class="nav-link">Dashboard</a>
-           </li>
-           <li class="nav-item">
-               <span>Interface</span>
-           </li>
+            <hr class="sidebar-divider my-0">
+            <li class="nav-item active">
+                <a href="#" class="nav-link">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <hr class="sidebar-divider">
+            <li class="sidebar-heading">
+                Interface
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link collapsed" data-toggle="collapse" data-target="#collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Components</span>
+                </a>
+                <div id="collapseTwo" class="collapse show" data-parent="accordionBar">
+                    <div class="bg-white collapse-inner rounded py-2">
+                        <h6 class="collapse-header">Customs Components:</h6>
+                        <a href="#" class="collapse-item">Button</a>
+                        <a href="#" class="collapse-item">Cards</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link collapsed" data-toggle="collapse" data-target="#collapseThree">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Utilities</span>
+                </a>
+                <div id="collapseThree" class="collapse" data-parent="accordionBar">
+                    <div class="bg-white collapse-inner rounded py-2">
+                        <h6 class="collapse-header">Customs Utilities:</h6>
+                        <a href="#" class="collapse-item">Colors</a>
+                        <a href="#" class="collapse-item">Borders</a>
+                        <a href="#" class="collapse-item">Animations</a>
+                        <a href="#" class="collapse-item">Other</a>
+                    </div>
+                </div>
+            </li>
+            <hr class="sidebar-divider">
+            <li class="sidebar-heading">
+                Addons
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link collapsed" data-toggle="collapse" data-target="collapseFour">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Pages</span>
+                </a>
+                <div id="collapseFour" class="collapse" data-parent="accordionBar">
+                    <div class="bg-white rounded collapse-inner">
+                        <h6 class="collapse-header">Login Screen:</h6>
+                        <a href="Login.html" class="collapse-item">Login</a>
+                        <a href="Register.html" class="collapse-item">Register</a>
+                        <a href="Forgot-password.html" class="collapse-item">Forgot-password</a>
+                        <h6 class="collapse-header">Other Pages:</h6>
+                        <a href="#" class="collapse-item">404 Page</a>
+                        <a href="#" class="collapse-item">Blank Page</a>=
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Charts</span></a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Tables</span></a>
+            </li>
+            <hr class="sidebar-divider">
+            <div class="text-center">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+              </div>
         </ul>
     </div>
 </body>
+
 </html>
