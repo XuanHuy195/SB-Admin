@@ -14,7 +14,7 @@
 </head>
 
 <body id="page-top">
-    <div class="wrapper">
+    <div id="wrapper">
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionBar">
             <a href="Index.html" class="sidebar-brand d-flex align-items-center justify-content-center">
                 <div class="sidebar-brand-icon rotate-n-15">
@@ -95,8 +95,291 @@
             <hr class="sidebar-divider">
             <div class="text-center">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
-              </div>
+            </div>
         </ul>
+
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <div id="content">
+
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <form action=""
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="bg-light form-control border-0 small "
+                                placeholder="Search for...">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in">
+                                <form action="#" class="form-inline navbar-search mr-auto w-100">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Search for...">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                                <i class="fas fa-bell fa-fw"></i>
+                                <span class="badge badge-danger badge-counter">3+</span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-list shadow">
+                                <h6 class="dropdown-header">Alert Center: </h6>
+                                <a href="#" class="dropdown-item d-flex align-items-center">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-primary">
+                                            <i class="fas fa-file-alt text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-400"> December 12, 2020</div>
+                                        <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="dropdown-item d-flex align-items-center">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-success">
+                                            <i class="fas fa-donate text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-400">December 7, 2020</div>
+                                        <span class="font-weight-bold">$290.29 has been deposited into your
+                                            account!</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="dropdown-item d-flex align-items-center">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-warning">
+                                            <i class="fas fa-exclamation-triangle text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-400">December 9, 2020</div>
+                                        <span class="font-weight-bold">Spending Alert: We've noticed unusually high
+                                            spending for your account.</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="dropdown-item text-center small text-gray-500">Show All Alerts</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown no-arrow mr-1">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                                <i class="fas fa-envelope fa-fw"></i>
+                                <span class="badge badge-danger badge-counter">7+</span>
+                            </a>
+                            <div class="dropdown-menu dropdown-list dropdown-menu-right">
+                                <h6 class="dropdown-header">Message Center</h6>
+                                <a href="#" class=" dropdown-item d-flex align-items-center">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img src="http://lorempixel.com/50/50/" alt="Img" class="rounded-circle">
+                                    </div>
+                                    <div class="font-weight-bold">
+                                        <div class="text-truncate">Hi there! I am wondering if you can help me with a
+                                            problem I've been having.</div>
+                                        <div class="small text-gray-400">Emily Fowler · 58m</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="dropdown-item d-flex align-items-center">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img src="http://lorempixel.com/60/60/" alt="Img" class="rounded-circle">
+                                    </div>
+                                    <div class="font-weight-bold">
+                                        <div class="text-truncate">I have the photos that you ordered last month, how
+                                            would you like them sent to you?</div>
+                                        <div class="text-gray-400 small">Jae Chun · 1d</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="dropdown-item d-flex align-items-center">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img src="http://lorempixel.com/70/70/" alt="" class="rounded-circle">
+                                    </div>
+                                    <div class="font-weight-bold">
+                                        <div class="text-truncate">Last month's report looks great, I am very happy with
+                                            the progress so far, keep up the good work!</div>
+                                        <div class="small text-gray-400">Morgan Alvarez · 2d</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="dropdown-item d-flex align-items-center">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img src="http://lorempixel.com/80/80/" alt="" class="rounded-circle">
+                                    </div>
+                                    <div class="font-weight-bold">
+                                        <div class="text-truncate">Am I a good boy? The reason I ask is because someone
+                                            told me that people say this to all dogs, even if they aren't good...</div>
+                                        <div class="text-gray-400 small">Chicken the Dog · 2w</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="small dropdown-item text-center text-gray-500">Read More messages</a>
+                            </div>
+                        </li>
+                        <div class="topbar-divider d-none d-sm-block"></div>
+                        <li class="nav-item dropdown no-arrow">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                                <span class="mr-2 d-none d-lg-inline text-gray-500 small">Xuan Huy</span>
+                                <img src="http://lorempixel.com/135/135/" alt="" class="rounded-circle img-profile">
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right shadow">
+                                <a class="dropdown-item">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a href="#" class="dropdown-item">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Settings
+                                </a>
+                                <a href="#" class="dropdown-item">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Activity Log
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a href="#" class="dropdown-item">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End of Topbar -->
+                <div class="container-fluid">
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h3 class="mb-0 text-gray-800">Dashboard</h3>
+                        <a href="#" class="d-none d-sm-inline-block shadow-sm btn btn-sm btn-primary">
+                            <i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs text-primary font-weight-bold text-uppercase">Earnings (Monthly)</div>
+                                            <div class="h5 font-weight-bold font-gray-800 mb-0">$400,000</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-success shadow py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs text-primary font-weight-bold text-uppercase">Earning (Annual)</div>
+                                            <div class="h5 font-weight-bold font-gray-800 mb-0">$215,000</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-info shadow py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs text-primary font-weight-bold text-uppercase">Tasks</div>
+                                            <div class="row align-items-center">
+                                                <div class="col-auto">
+                                                    <div class="h5 font-weight-bold font-gray-800 mb-0 mr-3">50%</div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="progress progress-sm mr-2">
+                                                            <div class="progress-bar" style="width:50%"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-warning shadow py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs text-primary font-weight-bold text-uppercase">Pending Requests</div>
+                                            <div class="h5 font-weight-bold font-gray-800 mb-0">18</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-comments fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Chart-->
+                    <div class="row">
+                        <div class="col-xl-8 col-lg-7">
+                            <div class="card shadow mb-4">
+                                <div class="card-header d-flex flex-row align-items-center justify-content-between py-3">
+                                    <h6 class="text-primary font-weight-bold m-0">Earings Overview</h6>
+                                    <div class="dropdown no-arrow">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu shadow dropdown-menu-right">
+                                            <div class="dropdown-header">Dropdown-Header: </div>
+                                            <a href="#" class="dropdown-item">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                   <img src="http://lorempixel.com/600/400/" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-5">
+                            <div class="card shadow mb-4">
+                                <div class="card-header d-flex flex-row align-items-center justify-content-between py-3">
+                                    <h6 class="text-primary font-weight-bold m-0">Revenue Sources</h6>
+                                    <div class="dropdown no-arrow">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <img src="http://lorempixel.com/250/400/" alt="">
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 

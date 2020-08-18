@@ -9770,9 +9770,9 @@ body {
 a:focus {
   outline: none;
 }
-
 #wrapper {
   display: flex;
+  flex-direction: row;
 }
 
 #wrapper #content-wrapper {
