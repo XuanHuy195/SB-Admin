@@ -1,70 +1,73 @@
 $(document).ready(function () {
+  var requestUrl = "https://learn.landsoftapis.com/api/accounts/requestOTP";
+  var verifyUrl = "https://learn.landsoftapis.com/api/accounts/verifyOTP";
   $("#login").on("click", function () {
-    var data = {
-      phoneNumber: "0979745401",
-      mode: "dev",
-      type: "em",
-      cksum: "string",
-      dKey: "string",
+    var phone = $("#phone").val();
+    var data1 = {
+      'phoneNumber': phone,
+      'mode': "dev",
+      'type': "em",
+      'cksum': "string",
+      'dKey': "string",
     };
-    // $.ajax({
-    //     type:'post',
-    //     url: 'https://learn.landsoftapis.com/api/accounts/verifyOTP',
-    //     //headers: {  'Access-Control-Allow-Origin': 'https://learn.landsoftapis.com/api/accounts/verifyOTP' },
-    //     data: JSON.stringify(data),
-    //     dataType: 'jsonp',
-    //     contentType: "application/json; charset=uft-8",
-    //     success: function (data) {
-    //         debugger
-    //     },
-    //     error: function (jqXHR, textStatus, errorThrown) {
-    //       debugger;
-    //       console.log(jqXHR, textStatus, errorThrown)
-    //     }
-    // });
-    // var result = postJson("https://learn.landsoftapis.com/api/accounts/verifyOTP");
-    // result.then(res => {
-    //   debugger;
-    // });
-    // result.catch((err) => {
-    //   debugger;
-    // })
-    fetch("https://learn.landsoftapis.com/api/accounts/verifyOTP", {
+    fetch(requestUrl, {
       method: "POST",
       headers: {
-        Accept: "application/json, text/plain",
-        "Content-Type": "application/json;charset=UTF-8",
+        "Content-Type": "application/json",
       },
-      mode: "no-cors",
-      body: {
-        phoneNumber: "0979745401",
-        mode: "dev",
-        type: "em",
-        cksum: "string",
-        dKey: "string",
-      },
+      body: JSON.stringify(data1),
     })
-      .then((response) => response.text())
-      .then((data) => console.log(data))
-      .catch((error) => alert("Error detected: " + error));
+      .then(function (response) {
+        // console.log(response.status);
+        // console.log(response.type);
+        // console.log(response.url);
+        if (response.status != 200) {
+          throw Error(response.status);
+        }
+        return response;
+      })
+      .then(function (response) {
+        localStorage.setItem('phone', phone);
+        console.log("Success!");
+        $(location).attr('href', './ValidLogin.html');
+      })
+      .catch(function (error) {
+        $("#error").removeClass('d-none');
+        console.log(error);
+      });
+      
   });
+  $("#valid").on('click', function () {
+    var phone = localStorage.getItem('phone');
+    var otpCode = $("#otpCode").val();
+    var data2 = {
+      'phoneNumber': phone,
+      'otpCode': otpCode,
+      'type': "em",
+      'cksum': "string",
+      'dKey': "string",
+    };
+    fetch(verifyUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data2),
+    })
+    .then(function(response){
+      if(response.status != 200){
+        throw Error(response.status);
+      }
+      return response;
+    }).then(function(response){
+      localStorage.setItem('otpCode', otpCode);
+      console.log("Success!");
+      $(location).attr('href', './Index.html');
+    }).catch(function(error){
+      $("#errValid").removeClass('d-none');
+      console.log(error);
+    });
+  });
+
 });
-// var postJson = async function (url) {
-//   const response = await fetch(url, {
-//       method: 'POST',
-//       headers: {
-//         'Accept': 'application/json, text/plain',
-//         'Content-Type': 'application/json;charset=UTF-8'
-//       },
-//       body: {
-//         "phoneNumber": "0979745401",
-//         "otpCode": "@dip@123",
-//         "type": "em",
-//         "cksum": "string",
-//         "dKey": "string"
-//         },
-//       mode: 'no-cors',
-//       credentials: 'same-origin'
-//   });
-//   return await response.Json();
-// }
+
