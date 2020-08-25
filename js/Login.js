@@ -34,6 +34,7 @@ $(document).ready(function () {
       .catch(function (error) {
         $("#loading-animation").addClass('d-none');
         $('#loading').removeClass('disabledbutton');
+        $("#phone").val(``);
         $("#error").removeClass('d-none');
         console.log(error);
       });
@@ -70,7 +71,7 @@ $(document).ready(function () {
     }).catch(function(error){
       $("#loading-animation").addClass('d-none');
       $('#loading').removeClass('disabledbutton');
-      $("#error").removeClass('d-none');
+      $("#otpCode").val(``);
       $("#errValid").removeClass('d-none');
       console.log(error);
     });
