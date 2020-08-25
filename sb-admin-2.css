@@ -46,7 +46,25 @@
 *::after {
   box-sizing: border-box;
 }
-
+.loading {
+  width: 60px;
+  height: 8px;
+  background-color: #4e73df;
+  animation-name: example;
+  position: relative;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+@keyframes example {
+  0%   {background-color:#4e73df; opacity:0.5; left:0px; top:0px; width: 150px; }
+  50%  {background-color:#4e73df; opacity:1; left:300px; top:0px; }
+  80%  {background-color:#4e73df; opacity:0.5; left:400px; top:0px;}
+  100% {background-color:#4e73df; opacity:0; left: 450px; width: 150px; }
+}
+.disabledbutton {
+  pointer-events: none;
+  opacity: 0.4;
+}
 html {
   font-family: sans-serif;
   line-height: 1.15;
@@ -5552,23 +5570,16 @@ a.badge-dark:focus, a.badge-dark.focus {
 }
 
 .close {
-  float: right;
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 1;
   color: #000;
-  text-shadow: 0 1px 0 #fff;
   opacity: .5;
 }
 
 .close:hover {
   color: #000;
-  text-decoration: none;
+  opacity: .5;
 }
 
-.close:not(:disabled):not(.disabled):hover, .close:not(:disabled):not(.disabled):focus {
-  opacity: .75;
-}
+
 
 button.close {
   padding: 0;

@@ -2,6 +2,8 @@ $(document).ready(function () {
   var requestUrl = "https://learn.landsoftapis.com/api/accounts/requestOTP";
   var verifyUrl = "https://learn.landsoftapis.com/api/accounts/verifyOTP";
   $("#login").on("click", function () {
+    $('#loading-animation').removeClass('d-none');
+    $('#loading').addClass('disabledbutton');
     var phone = $("#phone").val();
     var data1 = {
       'phoneNumber': phone,
@@ -18,9 +20,7 @@ $(document).ready(function () {
       body: JSON.stringify(data1),
     })
       .then(function (response) {
-        // console.log(response.status);
-        // console.log(response.type);
-        // console.log(response.url);
+        
         if (response.status != 200) {
           throw Error(response.status);
         }
@@ -32,12 +32,16 @@ $(document).ready(function () {
         $(location).attr('href', './ValidLogin.html');
       })
       .catch(function (error) {
+        $("#loading-animation").addClass('d-none');
+        $('#loading').removeClass('disabledbutton');
         $("#error").removeClass('d-none');
         console.log(error);
       });
       
   });
   $("#valid").on('click', function () {
+    $('#loading-animation').removeClass('d-none');
+    $('#loading').addClass('disabledbutton');
     var phone = localStorage.getItem('phone');
     var otpCode = $("#otpCode").val();
     var data2 = {
@@ -64,10 +68,12 @@ $(document).ready(function () {
       console.log("Success!");
       $(location).attr('href', './Index.html');
     }).catch(function(error){
+      $("#loading-animation").addClass('d-none');
+      $('#loading').removeClass('disabledbutton');
+      $("#error").removeClass('d-none');
       $("#errValid").removeClass('d-none');
       console.log(error);
     });
   });
-
+  
 });
-
