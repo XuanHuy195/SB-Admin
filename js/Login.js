@@ -1,6 +1,7 @@
 $(document).ready(function () {
   var requestUrl = "https://learn.landsoftapis.com/api/accounts/requestOTP";
   var verifyUrl = "https://learn.landsoftapis.com/api/accounts/verifyOTP";
+  // Nhập số điện thoại và kiểm tra
   $("#login").on("click", function () {
     $('#loading-animation').removeClass('d-none');
     $('#loading').addClass('disabledbutton');
@@ -40,6 +41,7 @@ $(document).ready(function () {
       });
       
   });
+  // Nhập mã xác thực và kiểm tra
   $("#valid").on('click', function () {
     $('#loading-animation').removeClass('d-none');
     $('#loading').addClass('disabledbutton');
@@ -63,10 +65,11 @@ $(document).ready(function () {
       if(response.status != 200){
         throw Error(response.status);
       }
-      return response;
+      
+      return response.json();
     }).then(function(response){
       localStorage.setItem('otpCode', otpCode);
-      console.log("Success!");
+      localStorage.setItem('idToken', response.idToken);
       $(location).attr('href', './Index.html');
     }).catch(function(error){
       $("#loading-animation").addClass('d-none');

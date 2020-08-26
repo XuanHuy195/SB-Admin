@@ -1,558 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="./js/sb-admin.js"></script>
     <link rel="stylesheet" href="./sb-admin-2.css">
     <script src="https://kit.fontawesome.com/dd602692de.js" crossorigin="anonymous"></script>
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-    <title>SB Admin</title>
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="module" src="./js/district.json"></script>
+    <script src="./js/list.js"></script>
 </head>
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+            <a class="navbar-brand font-weight-bold" href="#">Thông tin khách hàng</a>
+            <button type="button" class="btn btn-danger mr-2" data-toggle="modal" data-target="#myModal">
+                Thêm mới
+            </button>
+              <form class="form-inline my-2 my-lg-0 ">
+                <input id="search" class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search">
+              </form>
+          </nav>
+        <table id="table" class="table-sm table table-bordered table-hover table-responsive-lg">
+            <thead class="thead-dark small">
+                <th>Họ và tên</th>
+                <th>Điện thoại</th>
+                <th>Email</th>
+                <th>Nhóm</th>
+                <th>Số cmnd</th>
+                <th>Ngày cấp</th>
+                <th>Ngày Sinh</th>
+                <th>Địa chỉ liên hệ</th>
+                <th>Địa chỉ thường trú</th>
+                <th>Loại</th>
+                <th>Nguồn</th>
+                <th>Cấp độ</th>
+                <th>Mục đích</th>
+                <th>Ngày xử lý</th>
+                <th>Diễn giải</th>
+                <th>Nhân viên quản lý</th>
+            </thead>
+            <tbody id="body" class="small">
+                
+            </tbody>
+        </table>
+        <!-- The Modal -->
+        <div class="modal fade " id="myModal">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
 
-<body id="page-top ">
-    <div id="wrapper">
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionBar">
-            <a href="Index.html" class="sidebar-brand d-flex align-items-center justify-content-center">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
-            </a>
-            <hr class="sidebar-divider my-0">
-            <li class="nav-item active">
-                <a href="#" class="nav-link">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span>
-                </a>
-            </li>
-            <hr class="sidebar-divider">
-            <li class="sidebar-heading">
-                Interface
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link collapsed" data-toggle="collapse" data-target="#collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Components</span>
-                </a>
-                <div id="collapseTwo" class="collapse" data-parent="accordionBar">
-                    <div class="bg-white collapse-inner rounded py-2">
-                        <h6 class="collapse-header">Customs Components:</h6>
-                        <a href="Button.html" class="collapse-item">Button</a>
-                        <a href="Cards.html" class="collapse-item">Cards</a>
+                    <!-- Modal header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title font-weight-bold text-uppercase text-gray-900">Thêm mới khách hàng</h4>
                     </div>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link collapsed" data-toggle="collapse" data-target="#collapseThree">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span>Utilities</span>
-                </a>
-                <div id="collapseThree" class="collapse" data-parent="accordionBar">
-                    <div class="bg-white collapse-inner rounded py-2">
-                        <h6 class="collapse-header">Customs Utilities:</h6>
-                        <a href="#" class="collapse-item">Colors</a>
-                        <a href="#" class="collapse-item">Borders</a>
-                        <a href="#" class="collapse-item">Animations</a>
-                        <a href="#" class="collapse-item">Other</a>
+                    <!-- modal body -->
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="name">Họ tên <span class="text-danger">*</span></label>
+                                    <input type="email" class="form-control" id="email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="dateOfBirth">Ngày Sinh</label>
+                                    <input type="text" class="form-control" id=dateOfBirth>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Loại KH</label>
+                                    <select class="custom-select">
+                                        <option selected>Doanh Nghiệp</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 ">
+                                <div class="form-group">
+                                    <label for="phone">Điện thoại <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="phone">
+                                </div>
+                                <div class="form-group">
+                                    <label for="city">Tỉnh/TP</label>
+                                    <select class="custom-select" id="city">
+                                        <option selected>Chọn tỉnh/thành</option>
+                                        
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Nhóm KH</label>
+                                    <select class="custom-select">
+                                        <option selected>Chọn nhóm KH</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label for="address1">Địa chỉ thường trú</label>
+                                    <input type="text" id="address1" class="form-control" >
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label for="address2">Địa chỉ liên hệ</label>
+                                    <input type="text" id="address2" class="form-control" >
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="cmnd">CMND</label>
+                                    <input type="text" class="form-control" id="cmnd">
+                                </div>
+                                <div class="form-group">
+                                    <label for="date1">Ngày cấp</label>
+                                    <input type="text" class="form-control" id="date1">
+                                </div>
+                                <div class="form-group">
+                                    <label for="date2">Nơi cấp</label>
+                                    <input type="text" class="form-control" id="date2">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="">Người đại diện</label>
+                                    <input type="text" class="form-control" >
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Điện thoại người đại diện</label>
+                                    <input type="text" class="form-control" >
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Địa chỉ người đại diện</label>
+                                    <input type="text" class="form-control" >
+                                </div>
+                            </div>
+                        </div>
+                        
                     </div>
-                </div>
-            </li>
-            <hr class="sidebar-divider">
-            <li class="sidebar-heading">
-                Addons
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link collapsed" data-toggle="collapse" data-target="#collapseFour">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
-                </a>
-                <div id="collapseFour" class="collapse" data-parent="accordionBar">
-                    <div class="bg-white rounded collapse-inner">
-                        <h6 class="collapse-header">Login Screen:</h6>
-                        <a href="Login.html" class="collapse-item">Login</a>
-                        <a href="Register.html" class="collapse-item">Register</a>
-                        <a href="Forgot-password.html" class="collapse-item">Forgot-password</a>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a href="#" class="collapse-item">404 Page</a>
-                        <a href="#" class="collapse-item">Blank Page</a>
-                    </div>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
-            </li>
-            <hr class="sidebar-divider">
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
-        </ul>
-        <!-- End sidebar -->
-        <div id="content-wrapper" class="d-flex flex-column">
-
-            <div id="content">
-
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
-
-                    <form action=""
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="bg-light form-control border-0 small "
-                                placeholder="Search for...">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                                <i class="fas fa-search fa-fw"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in">
-                                <form action="#" class="form-inline navbar-search mr-auto w-100">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small"
-                                            placeholder="Search for...">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary">
-                                                <i class="fas fa-search fa-sm"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown no-arrow mx-1">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                                <i class="fas fa-bell fa-fw"></i>
-                                <span class="badge badge-danger badge-counter">3+</span>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right dropdown-list shadow">
-                                <h6 class="dropdown-header">Alert Center: </h6>
-                                <a href="#" class="dropdown-item d-flex align-items-center">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-primary">
-                                            <i class="fas fa-file-alt text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-400"> December 12, 2020</div>
-                                        <span class="font-weight-bold">A new monthly report is ready to download!</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="dropdown-item d-flex align-items-center">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-success">
-                                            <i class="fas fa-donate text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-400">December 7, 2020</div>
-                                        <span class="font-weight-bold">$290.29 has been deposited into your
-                                            account!</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="dropdown-item d-flex align-items-center">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-warning">
-                                            <i class="fas fa-exclamation-triangle text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-400">December 9, 2020</div>
-                                        <span class="font-weight-bold">Spending Alert: We've noticed unusually high
-                                            spending for your account.</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="dropdown-item text-center small text-gray-500">Show All Alerts</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown no-arrow mr-1">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                                <i class="fas fa-envelope fa-fw"></i>
-                                <span class="badge badge-danger badge-counter">7+</span>
-                            </a>
-                            <div class="dropdown-menu dropdown-list dropdown-menu-right">
-                                <h6 class="dropdown-header">Message Center</h6>
-                                <a href="#" class=" dropdown-item d-flex align-items-center">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img src="http://lorempixel.com/50/50/" alt="Img" class="rounded-circle">
-                                    </div>
-                                    <div class="font-weight-bold">
-                                        <div class="text-truncate">Hi there! I am wondering if you can help me with a
-                                            problem I've been having.</div>
-                                        <div class="small text-gray-400">Emily Fowler · 58m</div>
-                                    </div>
-                                </a>
-                                <a href="#" class="dropdown-item d-flex align-items-center">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img src="http://lorempixel.com/60/60/" alt="Img" class="rounded-circle">
-                                    </div>
-                                    <div class="font-weight-bold">
-                                        <div class="text-truncate">I have the photos that you ordered last month, how
-                                            would you like them sent to you?</div>
-                                        <div class="text-gray-400 small">Jae Chun · 1d</div>
-                                    </div>
-                                </a>
-                                <a href="#" class="dropdown-item d-flex align-items-center">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img src="http://lorempixel.com/70/70/" alt="" class="rounded-circle">
-                                    </div>
-                                    <div class="font-weight-bold">
-                                        <div class="text-truncate">Last month's report looks great, I am very happy with
-                                            the progress so far, keep up the good work!</div>
-                                        <div class="small text-gray-400">Morgan Alvarez · 2d</div>
-                                    </div>
-                                </a>
-                                <a href="#" class="dropdown-item d-flex align-items-center">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img src="http://lorempixel.com/80/80/" alt="" class="rounded-circle">
-                                    </div>
-                                    <div class="font-weight-bold">
-                                        <div class="text-truncate">Am I a good boy? The reason I ask is because someone
-                                            told me that people say this to all dogs, even if they aren't good...</div>
-                                        <div class="text-gray-400 small">Chicken the Dog · 2w</div>
-                                    </div>
-                                </a>
-                                <a href="#" class="small dropdown-item text-center text-gray-500">Read More messages</a>
-                            </div>
-                        </li>
-                        <div class="topbar-divider d-none d-sm-block"></div>
-                        <li class="nav-item dropdown no-arrow">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                                <span class="mr-2 d-none d-lg-inline text-gray-500 small">Xuan Huy</span>
-                                <img src="http://lorempixel.com/135/135/" alt="" class="rounded-circle img-profile">
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right shadow">
-                                <a href="#" class="dropdown-item">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a href="./Login.html" class="dropdown-item">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                </nav>
-                <!-- End of Topbar -->
-                <div class="container-fluid">
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h3 class="mb-0 text-gray-800">Dashboard</h3>
-                        <a href="#" class="d-none d-sm-inline-block shadow-sm btn btn-sm btn-primary">
-                            <i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow py-2">
-                                <div class="card-body">
-                                    <div class="row align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs text-primary font-weight-bold text-uppercase">Earnings
-                                                (Monthly)</div>
-                                            <div class="h5 font-weight-bold text-gray-900 mb-0">$400,000</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow py-2">
-                                <div class="card-body">
-                                    <div class="row align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs text-success font-weight-bold text-uppercase">Earnings
-                                                (Annual)</div>
-                                            <div class="h5 font-weight-bold text-gray-900 mb-0">$215,000</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-info shadow py-2">
-                                <div class="card-body">
-                                    <div class="row align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs text-info font-weight-bold text-uppercase">Tasks</div>
-                                            <div class="row align-items-center">
-                                                <div class="col-auto m-0">
-                                                    <div class="h5 font-weight-bold text-gray-900 mb-0">50%</div>
-                                                </div>
-                                                <div class="col p-0">
-                                                    <div class="progress progress-sm mr-2">
-                                                        <div class="progress-bar" style="width:50%"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto pl-0">
-                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-warning shadow py-2">
-                                <div class="card-body">
-                                    <div class="row align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs text-warning font-weight-bold text-uppercase">Pending
-                                                Requests</div>
-                                            <div class="h5 font-weight-bold text-gray-900 mb-0">18</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-comments fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Chart-->
-                    <div class="row">
-                        <div class="col-xl-8 col-lg-7">
-                            <div class="card shadow mb-4">
-                                <div
-                                    class="card-header d-flex flex-row align-items-center justify-content-between py-3">
-                                    <h6 class="text-primary font-weight-bold m-0">Earings Overview</h6>
-                                    <div class="dropdown no-arrow">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                        </a>
-                                        <div class="dropdown-menu shadow dropdown-menu-right">
-                                            <div class="dropdown-header">Dropdown-Header: </div>
-                                            <a href="#" class="dropdown-item">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="chart-area">
-                                        <canvas id="myAreaChart"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-5">
-                            <div class="card shadow mb-4">
-                                <div
-                                    class="card-header d-flex flex-row align-items-center justify-content-between py-3">
-                                    <h6 class="text-primary font-weight-bold m-0">Revenue Sources</h6>
-                                    <div class="dropdown no-arrow">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right">
-                                            <div class="dropdown-header">Dropdown-Header:</div>
-                                            <a href="#" class="dropdown-item">Action</a>
-                                            <a href="#" class="dropdown-item">Another action</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a href="#" class="dropdown-item">Something else here</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="chart-pie">
-                                        <canvas id="myPieChart"></canvas>
-                                    </div>
-                                    <div class="mt-4 text-center small">
-                                        <span class="mr-2">
-                                          <i class="fas fa-circle text-primary"></i> Direct
-                                        </span>
-                                        <span class="mr-2">
-                                          <i class="fas fa-circle text-success"></i> Social
-                                        </span>
-                                        <span class="mr-2">
-                                          <i class="fas fa-circle text-info"></i> Referral
-                                        </span>
-                                      </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-lg-6 mb-4">
-                            <div class="card shadow mb-4">
-                                <div class="card-header text-primary font-weight-bold py-3">
-                                    Projects
-                                </div>
-                                <div class="card-body">
-                                    <h4 class="small font-weight-bold">Server Migration <span
-                                            class="float-right">20%</span></h4>
-                                    <div class="progress mb-4">
-                                        <div class="progress-bar bg-danger" role="progressbar" area-valuemin="0"
-                                            area-valuenow="20" area-valuemax="100" style="width:20%"></div>
-                                    </div>
-                                    <h4 class="small font-weight-bold">Sales Tracking <span
-                                            class="float-right">40%</span></h4>
-                                    <div class="progress mb-4">
-                                        <div class="progress-bar bg-warning" style="width:40%"></div>
-                                    </div>
-                                    <h4 class="small font-weight-bold">Customs Database <span
-                                            class="float-right">60%</span></h4>
-                                    <div class="progress mb-4">
-                                        <div class="progress-bar" style="width:60%"></div>
-                                    </div>
-                                    <h4 class="small font-weight-bold">Payout Detail <span
-                                            class="float-right">80%</span></h4>
-                                    <div class="progress mb-4">
-                                        <div class="progress-bar bg-info" style="width:80%"></div>
-                                    </div>
-                                    <h4 class="small font-weight-bold">Account Setup <span
-                                            class="float-right">Complete!</span></h4>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-success" style="width:100%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-primary shadow text-white">
-                                       <div class="card-body">
-                                           Primary
-                                           <div class="small text-white-50">#4e73df</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-success shadow text-white">
-                                        <div class="card-body">
-                                            Success
-                                            <div class="small text-white-50">#1cc88a</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-info shadow text-white">
-                                        <div class="card-body">
-                                            Info 
-                                            <div class="small text-white 50">#36b9cc</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-warning shadow text-white">
-                                        <div class="card-body">
-                                            Warning 
-                                            <div class="small text-white-50">#f6c23e</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-danger shadow text-white">
-                                        <div class="card-body">
-                                            Danger
-                                            <div class="small text-white-50">#e74a3b</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-secondary shadow text-white">
-                                        <div class="card-body">
-                                            Secondary
-                                            <div class="small text-white-50">#858796</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-light shadow text-gray">
-                                        <div class="card-body">
-                                            Light 
-                                            <div class="small text-gray-50">#f8f9fc</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 mb-4">
-                                    <div class="card bg-dark shadow text-white">
-                                        <div class="card-body">
-                                            Dark 
-                                            <div class="small text-white-50">#5a5c69</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 mb-4">
-                            <div class="card shadow mb-4">
-                                <div class="card-header text-primary font-weight-bold">IIIustrations</div>
-                                <div class="card-body">
-                                    <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" src="./assets/undraw_posting_photo.svg" style="width: 25rem" alt="">
-                                    <p>Add some quality, svg illustrations to your project courtesy of <a href="#">unDraw</a>, a constantly updated collection of beautiful svg images that you can use completely free and without attribution!                                    </p>
-                                    <a href="#">Browse Illustrations on unDraw &rarr;</a>
-                                </div>
-                            </div>
-                            <div class="card shadow mb-4">
-                                <div class="card-header text-primary font-weight-bold">Development Approach</div>
-                                <div class="card-body">
-                                    <p>SB Admin 2 makes extensive use of Bootstrap 4 utility classes in order to reduce CSS bloat and poor page performance. Custom CSS classes are used to create custom components and custom utility classes.
-                                    <br><br> Before working with this theme, you should become familiar with the Bootstrap framework, especially the utility classes.</p>
-                                </div>
-                            </div>
-                        </div>
+                    <!-- modal footer -->
+                    <div class="modal-footer d-flex justify-content-center">
+                            <div class="btn btn-primary">Lưu</div>
+                            <div class="btn btn-danger">Thoát</div>
                     </div>
                 </div>
             </div>
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
-                    </div>
-                </div>
-            </footer>
+             <!-- end Modal -->
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-        <script src="./Chart.js/Chart.min.js"></script>
-        <script src="./js/chart-area.js"></script>
-        <script src="./js/chart-pie.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+crossorigin="anonymous"></script>
 </body>
-
 </html>
