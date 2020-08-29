@@ -16,8 +16,6 @@
             <button type="button" class="btn btn-info mr-2" data-toggle="modal" data-target="#myModal">
                 Thêm mới
             </button>
-            <button class="btn btn-danger mr-2">Xóa</button>
-            <button class="btn btn-success mr-2 ">Sửa</button>
               <form class="form-inline my-2 my-lg-0 ">
                 <input id="search" class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search">
               </form>
@@ -62,6 +60,122 @@
                     <!-- Modal header -->
                     <div class="modal-header">
                         <h4 class="modal-title font-weight-bold text-uppercase text-gray-900">Thêm mới khách hàng</h4>
+                    </div>
+                    <!-- modal body -->
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="firstNameNew">Họ tên đệm<span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="firstNameNew" >
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="lastNameNew">Tên<span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="lastNameNew">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 ">
+                                <div class="form-group">
+                                    <label for="phoneNew">Điện thoại <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="phoneNew">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 ">
+                                <div class="form-group">
+                                    <label for="emailNew">Email <span class="text-danger">*</span></label>
+                                    <input type="email" class="form-control" id="emailNew">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 ">
+                                <div class="form-group">
+                                    <label for="positionNew">Chức vụ</span></label>
+                                    <input type="text" class="form-control" id="positionNew">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="iDNoNew">CMND</label>
+                                    <input type="text" class="form-control" id="iDNoNew">
+                                </div>
+                           
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="dateOfIssueNew">Ngày cấp CMND</label>
+                                    <input type="text" class="form-control" id="dateOfIssueNew">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="placeOfIssueNew">Nơi cấp CMND</label>
+                                    <input type="text" class="form-control" id="placeOfIssueNew">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="dataOfBirthNew">Ngày Sinh</label>
+                                    <input type="text" class="form-control" id="dataOfBirthNew">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="levelNew">Cấp độ</label>
+                                    <input type="text" id="levelNew" class="form-control" >
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label for="address1New">Địa chỉ thường trú</label>
+                                    <input type="text" id="address1New" class="form-control" >
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label for="address2New">Địa chỉ liên hệ</label>
+                                    <input type="text" id="address2New" class="form-control" >
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="companyNameNew">Tên công ty </label>
+                                    <input type="text" id="companyNameNew" class="form-control" >
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="companyTaxCodeNew">Mã số thuế công ty</label>
+                                    <input type="text" id="companyTaxCodeNew" class="form-control" >
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label for="companyAddressNew">Địa chỉ công ty</label>
+                                    <input type="text" id="companyAddressNew" class="form-control">
+                                </div>
+                            </div>
+                           
+                            
+                        </div>
+                        
+                    </div>
+                    <!-- modal footer -->
+                    <div class="modal-footer d-flex justify-content-center">
+                            <div id="submit" class="btn btn-primary">Lưu</div>
+                            <div id="exit1" class="btn btn-danger" data-dismiss="modal">Thoát</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <!-- end Modal -->
+        <div class="modal fade" id="detailModal">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+
+                    <!-- Modal header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title font-weight-bold text-uppercase text-gray-900">Chỉnh sửa thông tin khách hàng</h4>
                     </div>
                     <!-- modal body -->
                     <div class="modal-body">
@@ -164,32 +278,14 @@
                     </div>
                     <!-- modal footer -->
                     <div class="modal-footer d-flex justify-content-center">
-                            <div id="submit" class="btn btn-primary">Lưu</div>
-                            <div id="exit" class="btn btn-danger">Thoát</div>
+                            <div id="update" class="btn btn-primary">Lưu</div>
+                            <div id="del" class="btn btn-danger">Xóa</div>
+                            <div id="exit2" class="btn btn-warning" data-dismiss="modal">Thoát</div>
                     </div>
                 </div>
             </div>
         </div>
-         <!-- end Modal -->
-        <div class="modal fade" id="detailModal">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <!-- Modal header -->
-                    <div class="modal-header">
-                        <h4 class="modal-title font-weight-bold text-uppercase text-gray-900">Chỉnh sửa khách hàng</h4>
-                    </div>
-                    <!-- modal body -->
-                    <div class="modal-body" id="modal-body">
-                        
-                    </div>
-                    <!-- modal footer -->
-                    <div class="modal-footer d-flex justify-content-center">
-                            <div id="submit" class="btn btn-primary">Lưu</div>
-                            <div id="exit" class="btn btn-danger">Thoát</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
 crossorigin="anonymous"></script>
