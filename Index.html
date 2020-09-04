@@ -66,25 +66,37 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label for="firstNameNew">Họ tên đệm<span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="firstNameNew" >
+                                    <div class="d-flex justify-content-between">
+                                        <label for="firstNameNew">Họ tên đệm<span class="text-danger">*</span></label>
+                                        <label class="errFirstName text-danger d-none">Xin nhập họ tên đệm</label>
+                                    </div>
+                                    <input type="text" class="form-control" id="firstNameNew">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label for="lastNameNew">Tên<span class="text-danger">*</span></label>
+                                    <div class="d-flex justify-content-between">
+                                        <label for="lastNameNew">Tên<span class="text-danger">*</span></label>
+                                        <label class="errLastName text-danger d-none">Xin nhập tên</label>
+                                    </div>
                                     <input type="text" class="form-control" id="lastNameNew">
                                 </div>
                             </div>
                             <div class="col-lg-6 ">
                                 <div class="form-group">
-                                    <label for="phoneNew">Điện thoại <span class="text-danger">*</span></label>
+                                    <div class="d-flex justify-content-between">
+                                        <label for="phoneNew">Điện thoại <span class="text-danger">*</span></label>
+                                        <label class="errPhone text-danger d-none">Xin nhập số điện thoại</label>
+                                    </div> 
                                     <input type="text" class="form-control" id="phoneNew">
                                 </div>
                             </div>
                             <div class="col-lg-6 ">
                                 <div class="form-group">
-                                    <label for="emailNew">Email <span class="text-danger">*</span></label>
+                                    <div class="d-flex justify-content-between">
+                                        <label for="emailNew">Email <span class="text-danger">*</span></label>
+                                        <label class="errEmail text-danger d-none">Xin nhập địa chỉ email</label>
+                                    </div>
                                     <input type="email" class="form-control" id="emailNew">
                                 </div>
                             </div>
@@ -155,15 +167,27 @@
                                     <input type="text" id="companyAddressNew" class="form-control">
                                 </div>
                             </div>
-                           
-                            
+                           <div class="col-lg-6">
+                               <div class="form-group">
+                                   <label for="jobId">Loại khách hàng</label>
+                                   <select id="jobId" class="form-control form-control-lg">
+                                   </select>
+                               </div>
+                           </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="groupId">Nhóm khách hàng</label>
+                                    <select id="groupId" class="form-control form-control-lg">
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                         
                     </div>
                     <!-- modal footer -->
                     <div class="modal-footer d-flex justify-content-center">
                             <div id="submit" class="btn btn-primary">Lưu</div>
-                            <div id="exit1" class="btn btn-danger" data-dismiss="modal">Thoát</div>
+                            <div class="btn btn-danger exit" data-dismiss="modal">Thoát</div>
                     </div>
                 </div>
             </div>
@@ -182,25 +206,37 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label for="firstName">Họ tên đệm<span class="text-danger">*</span></label>
+                                    <div class="d-flex justify-content-between">
+                                        <label for="firstName">Họ tên đệm<span class="text-danger">*</span></label>
+                                        <label class="errFirstName text-danger d-none">Xin nhập họ tên đệm</label>
+                                    </div>
                                     <input type="text" class="form-control" id="firstName" >
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label for="lastName">Tên<span class="text-danger">*</span></label>
+                                    <div class="d-flex justify-content-between">
+                                        <label for="lastName">Tên<span class="text-danger">*</span></label>
+                                        <label class="errLastName text-danger d-none">Xin nhập tên</label>
+                                    </div>
                                     <input type="text" class="form-control" id="lastName">
                                 </div>
                             </div>
                             <div class="col-lg-6 ">
                                 <div class="form-group">
-                                    <label for="phone">Điện thoại <span class="text-danger">*</span></label>
+                                    <div class="d-flex justify-content-between">
+                                        <label for="phone">Điện thoại <span class="text-danger">*</span></label>
+                                        <label class="errPhone text-danger d-none">Xin nhập số điện thoại</label>
+                                    </div>
                                     <input type="text" class="form-control" id="phone">
                                 </div>
                             </div>
                             <div class="col-lg-6 ">
                                 <div class="form-group">
-                                    <label for="email">Email <span class="text-danger">*</span></label>
+                                    <div class="d-flex justify-content-between">
+                                        <label for="email">Email <span class="text-danger">*</span></label>
+                                        <label class="errEmail text-danger d-none">Xin nhập địa chỉ email</label>
+                                    </div>
                                     <input type="email" class="form-control" id="email">
                                 </div>
                             </div>
@@ -280,7 +316,7 @@
                     <div class="modal-footer d-flex justify-content-center">
                             <div id="update" class="btn btn-primary">Lưu</div>
                             <div id="del" class="btn btn-danger">Xóa</div>
-                            <div id="exit2" class="btn btn-warning" data-dismiss="modal">Thoát</div>
+                            <div  class="btn btn-warning exit" data-dismiss="modal">Thoát</div>
                     </div>
                 </div>
             </div>

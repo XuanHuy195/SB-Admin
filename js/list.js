@@ -73,7 +73,6 @@ $(document).ready(function(){
        //get element
        $('#table tbody tr').on('click', function () {
         var id = $(this).attr('id');
-        localStorage.setItem('id',id);
         var getUrl = 'https://learn.landsoftapis.com/api/Customer/Get?Id='+id;
         fetch(getUrl, {
                 method: 'GET',
@@ -106,7 +105,6 @@ $(document).ready(function(){
             console.log(err);
         });
         var UpdateUrl = 'https://learn.landsoftapis.com/api/Customer/Update?Id='+id;
-        console.log(UpdateUrl);
         $('#update').on('click', function(){
             var firstName = $('#firstName').val();
             var lastName = $('#lastName').val();
@@ -122,6 +120,30 @@ $(document).ready(function(){
             var companyName = $('#companyName').val();
             var companyTaxCode = $('#companyTaxCode').val();
             var companyAddress = $('#companyAddress').val();
+            if(firstName == ``){
+                $('.errFirstName').removeClass('d-none');
+                $('#firstNameNew').addClass('is-invalid');
+                $('.modal').scrollTop(0);
+                return;
+            }
+            if(lastName == ``){
+                $('.errLastName').removeClass('d-none');
+                $('#lastNameNew').addClass('is-invalid');
+                $('.modal').scrollTop(0);
+                return;
+            }
+            if(phone == ``){
+                $('.errPhone').removeClass('d-none');
+                $('#phoneNew').addClass('is-invalid');
+                $('.modal').scrollTop(0);
+                return;
+            }
+            if(email == ``){
+                $('.errEmail').removeClass('d-none');
+                $('#emailNew').addClass('is-invalid');
+                $('.modal').scrollTop(0);
+                return;
+            }
             var data = {
                 "LastName": lastName,
                 "FirstName": firstName,
@@ -164,7 +186,7 @@ $(document).ready(function(){
                 alert('Cập nhật tài khoản thành công!');
                 console.log('Success!');
             }).catch(function(err){
-                //alert('Cập nhật thất bại xin thử lại!');
+                alert('Cập nhật thất bại xin thử lại!');
                 console.log(err);
             });
         });
@@ -194,7 +216,55 @@ $(document).ready(function(){
         alert('Hết thời gian sử dụng');
         $(location).attr('href', './Login.html');
     });
-    
+    // get job list
+    var jobList = ``;
+    var jobListUrl = 'https://learn.landsoftapis.com/api/Customer/JobGetList';
+    fetch(jobListUrl, {
+        method: 'GET',
+        headers: {
+            'Content-Type':'application/json',
+            'Authorization': 'Bearer ' + idToken,
+        }
+    }).then(function(response){
+        if(response.status != 200){
+            throw Error(status);
+        }
+        return response.json();
+    }).then(function(data){
+        data.forEach(element => {
+            jobList += `
+                <option value = '${element.Id}'>${element.Name}</option>
+            `;
+        });
+        $('#jobId').html(jobList);
+    }).then(function(err){
+        console.log(err);
+    })
+    //get group list
+    var groupList = ``;
+    var groupListUrl = 'https://learn.landsoftapis.com/api/Customer/GroupGetList';
+    fetch(groupListUrl, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer '+ idToken,
+        }
+    }).then(function(response){
+        if(response.status != 200){
+            throw Error(status);
+        }
+
+        return response.json();
+    }).then(function(data){
+        data.forEach(element => {
+            groupList += `
+                <option value='${element.Id}'>${element.Name}</option>
+            `;
+        });
+        $('#groupId').html(groupList);
+    }).then(function(err){
+        console.log(err);
+    })
     // thêm mới người dùng 
     var addUrl = 'https://learn.landsoftapis.com/api/Customer/Insert';
     $('#submit').on('click', function(){
@@ -212,17 +282,43 @@ $(document).ready(function(){
         var companyName = $('#companyNameNew').val();
         var companyTaxCode = $('#companyTaxCodeNew').val();
         var companyAddress = $('#companyAddressNew').val();
+        var groupId = parseInt($('#groupId').find(':selected').val());
+        var jobId = parseInt($('#jobId').find(':selected').val());
+        if(firstName == ``){
+            $('.errFirstName').removeClass('d-none');
+            $('#firstNameNew').addClass('is-invalid');
+            $('.modal').scrollTop(0);
+            return;
+        }
+        if(lastName == ``){
+            $('.errLastName').removeClass('d-none');
+            $('#lastNameNew').addClass('is-invalid');
+            $('.modal').scrollTop(0);
+            return;
+        }
+        if(phone == ``){
+            $('.errPhone').removeClass('d-none');
+            $('#phoneNew').addClass('is-invalid');
+            $('.modal').scrollTop(0);
+            return;
+        }
+        if(email == ``){
+            $('.errEmail').removeClass('d-none');
+            $('#emailNew').addClass('is-invalid');
+            $('.modal').scrollTop(0);
+            return;
+        }
         var data = {
             "LastName": lastName,
             "FirstName": firstName,
             "ShortName": "string",
             "Mobile": phone,
-            "GroupId": 0,
+            "GroupId": (groupId),
             "Address1": address1,
             "Address2": address2,
             "yyyy2": dateOfIssue,
             "PlaceOfIssue": placeOfIssue,
-            "JobId": 0,
+            "JobId": (jobId),
             "Company": companyName,
             "Position": position,
             "Email": email,
@@ -250,12 +346,14 @@ $(document).ready(function(){
             }
             return response;
         }).then(function(response){
+            alert('Thêm mới khách hàng thành công!');
             console.log('Success!');
         }).catch(function(err){
+            alert('Số điện thoại đã tồn tại xin thử lại!');
             console.log(err);
         });
     }); 
-    $('#exit1, #exit2').on('click', function(){
+    $('.exit').on('click', function(){
         location.reload();
     });
     
