@@ -101,7 +101,7 @@ $(document).ready(function(){
                 $('#companyName').val(data.CompanyName);
                 $('#companyTaxCode').val(data.CompanyTaxCode);
                 $('#companyAddress').val(data.CompanyAddress);
-                $('#JobId2').find("option[value="+data.JobId+"]").attr('selected', true);
+                $('#jobId2').find("option[value="+data.JobId+"]").attr('selected', true);
                 $('#groupId2').find("option[value="+data.GroupId+"]").attr('selected', true);
         }).catch(function(err){
             console.log(err);
@@ -356,7 +356,6 @@ $(document).ready(function(){
             return response;
         }).then(function(response){
             alert('Thêm mới khách hàng thành công!');
-            $('#myModal').hide();
             console.log('Success!');
         }).catch(function(err){
             alert('Số điện thoại đã tồn tại xin thử lại!');
