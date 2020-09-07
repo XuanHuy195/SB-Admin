@@ -105,6 +105,7 @@ $(document).ready(function(){
                 $('#groupId2').find("option[value="+data.GroupId+"]").attr('selected', true);
         }).catch(function(err){
             console.log(err);
+            
         });
         var UpdateUrl = 'https://learn.landsoftapis.com/api/Customer/Update?Id='+id;
         $('#update').on('click', function(){
@@ -126,27 +127,43 @@ $(document).ready(function(){
             var jobId2 = parseInt($('#jobId2').find(':selected').val());
             if(firstName == ``){
                 $('.errFirstName').removeClass('d-none');
-                $('#firstNameNew').addClass('is-invalid');
+                $('#firstName').addClass('is-invalid');
                 $('.modal').scrollTop(0);
                 return;
+            } else {
+                $('.errFirstName').addClass('d-none');
+                $('#firstName').removeClass('is-invalid');
+                $('.modal').scrollTop(0);
             }
             if(lastName == ``){
                 $('.errLastName').removeClass('d-none');
-                $('#lastNameNew').addClass('is-invalid');
+                $('#lastName').addClass('is-invalid');
                 $('.modal').scrollTop(0);
                 return;
+            } else {
+                $('.errLastName').addClass('d-none');
+                $('#lastName').removeClass('is-invalid');
+                $('.modal').scrollTop(0);
             }
             if(phone == ``){
                 $('.errPhone').removeClass('d-none');
-                $('#phoneNew').addClass('is-invalid');
+                $('#phone').addClass('is-invalid');
                 $('.modal').scrollTop(0);
                 return;
+            } else {
+                $('.errPhone').addClass('d-none');
+                $('#phone').removeClass('is-invalid');
+                $('.modal').scrollTop(0);
             }
             if(email == ``){
                 $('.errEmail').removeClass('d-none');
-                $('#emailNew').addClass('is-invalid');
+                $('#email').addClass('is-invalid');
                 $('.modal').scrollTop(0);
                 return;
+            } else {
+                $('.errEmail').addClass('d-none');
+                $('#email').removeClass('is-invalid');
+                $('.modal').scrollTop(0);
             }
             var data = {
                 "LastName": lastName,
@@ -298,24 +315,40 @@ $(document).ready(function(){
             $('#firstNameNew').addClass('is-invalid');
             $('.modal').scrollTop(0);
             return;
+        } else {
+            $('.errFirstName').addClass('d-none');
+            $('#firstNameNew').removeClass('is-invalid');
+            $('.modal').scrollTop(0);
         }
         if(lastName == ``){
             $('.errLastName').removeClass('d-none');
             $('#lastNameNew').addClass('is-invalid');
             $('.modal').scrollTop(0);
             return;
+        } else {
+            $('.errLastName').addClass('d-none');
+            $('#lastNameNew').removeClass('is-invalid');
+            $('.modal').scrollTop(0);
         }
         if(phone == ``){
             $('.errPhone').removeClass('d-none');
             $('#phoneNew').addClass('is-invalid');
             $('.modal').scrollTop(0);
             return;
+        } else {
+            $('.errPhone').addClass('d-none');
+            $('#phoneNew').removeClass('is-invalid');
+            $('.modal').scrollTop(0);
         }
         if(email == ``){
             $('.errEmail').removeClass('d-none');
             $('#emailNew').addClass('is-invalid');
             $('.modal').scrollTop(0);
             return;
+        } else {
+            $('.errEmail').addClass('d-none');
+            $('#emailNew').removeClass('is-invalid');
+            $('.modal').scrollTop(0);
         }
         var data = {
             "LastName": lastName,
