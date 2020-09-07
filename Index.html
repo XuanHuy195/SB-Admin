@@ -10,8 +10,8 @@
     <script src="./js/list.js"></script>
 </head>
 <body>
-    <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <div class="m-1">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-primary">
             <a class="navbar-brand font-weight-bold" href="#">Thông tin khách hàng</a>
             <button type="button" class="btn btn-info mr-2" data-toggle="modal" data-target="#myModal">
                 Thêm mới
@@ -27,8 +27,9 @@
                   <li class="page-item"><a class="page-link" href="?CurrentPage=4&RowPerPage=100">4</a></li>
                 </ul>
               </nav>
-          </nav>
-        <table id="table" class="table-sm table table-bordered table-hover ">
+        </nav>
+        <div class="mb-5">NavBar</div>
+        <table id="table" class="table-sm table table-bordered table-hover mt-5">
             <thead class="thead-dark small">
                 <th>Họ và tên</th>
                 <th>Điện thoại</th>
@@ -307,7 +308,20 @@
                                     <input type="text" id="companyAddress" class="form-control">
                                 </div>
                             </div>
-                           
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="jobId">Loại khách hàng</label>
+                                    <select id="jobId2" class="form-control form-control-lg">
+                                    </select>
+                                </div>
+                            </div>
+                             <div class="col-lg-6">
+                                 <div class="form-group">
+                                     <label for="groupId">Nhóm khách hàng</label>
+                                     <select id="groupId2" class="form-control form-control-lg">
+                                     </select>
+                                 </div>
+                             </div>
                             
                         </div>
                         
@@ -316,7 +330,7 @@
                     <div class="modal-footer d-flex justify-content-center">
                             <div id="update" class="btn btn-primary">Lưu</div>
                             <div id="del" class="btn btn-danger">Xóa</div>
-                            <div  class="btn btn-warning exit" data-dismiss="modal">Thoát</div>
+                            <div class="btn btn-warning exit" data-dismiss="modal">Thoát</div>
                     </div>
                 </div>
             </div>

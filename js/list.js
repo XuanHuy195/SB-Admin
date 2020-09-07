@@ -70,7 +70,7 @@ $(document).ready(function(){
             });
            });
        }
-       //get element
+       //
        $('#table tbody tr').on('click', function () {
         var id = $(this).attr('id');
         var getUrl = 'https://learn.landsoftapis.com/api/Customer/Get?Id='+id;
@@ -101,6 +101,8 @@ $(document).ready(function(){
                 $('#companyName').val(data.CompanyName);
                 $('#companyTaxCode').val(data.CompanyTaxCode);
                 $('#companyAddress').val(data.CompanyAddress);
+                $('#JobId2').find("option[value="+data.JobId+"]").attr('selected', true);
+                $('#groupId2').find("option[value="+data.GroupId+"]").attr('selected', true);
         }).catch(function(err){
             console.log(err);
         });
@@ -120,6 +122,8 @@ $(document).ready(function(){
             var companyName = $('#companyName').val();
             var companyTaxCode = $('#companyTaxCode').val();
             var companyAddress = $('#companyAddress').val();
+            var groupId2 = parseInt($('#groupId2').find(':selected').val());
+            var jobId2 = parseInt($('#jobId2').find(':selected').val());
             if(firstName == ``){
                 $('.errFirstName').removeClass('d-none');
                 $('#firstNameNew').addClass('is-invalid');
@@ -149,12 +153,13 @@ $(document).ready(function(){
                 "FirstName": firstName,
                 "ShortName": "string",
                 "Mobile": phone,
-                "GroupId": 0,
+                "GroupId": (groupId2),
                 "Address1": address1,
                 "Address2": address2,
+                "IDNo": iDNo,
                 "yyyy2": dateOfIssue,
                 "PlaceOfIssue": placeOfIssue,
-                "JobId": 0,
+                "JobId": (jobId2),
                 "Company": companyName,
                 "Position": position,
                 "Email": email,
@@ -167,7 +172,7 @@ $(document).ready(function(){
                 "CompanyName": companyName,
                 "CompanyTaxCode": companyTaxCode,
                 "CompanyAddress": companyAddress,
-                "UID": iDNo,
+                
             }
             fetch(UpdateUrl, {
                 method: 'PUT',
@@ -237,6 +242,8 @@ $(document).ready(function(){
             `;
         });
         $('#jobId').html(jobList);
+        $('#jobId2').html(jobList);
+
     }).then(function(err){
         console.log(err);
     })
@@ -262,6 +269,8 @@ $(document).ready(function(){
             `;
         });
         $('#groupId').html(groupList);
+        $('#groupId2').html(groupList);
+
     }).then(function(err){
         console.log(err);
     })
@@ -347,6 +356,7 @@ $(document).ready(function(){
             return response;
         }).then(function(response){
             alert('Thêm mới khách hàng thành công!');
+            $('#myModal').hide();
             console.log('Success!');
         }).catch(function(err){
             alert('Số điện thoại đã tồn tại xin thử lại!');
