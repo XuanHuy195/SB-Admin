@@ -236,7 +236,7 @@ $(document).ready(function(){
        // xảy ra lỗi
     }).catch(function(err){
         alert('Hết thời gian sử dụng');
-        $(location).attr('href', './Login.html');
+        $(location).attr('href', './Index.html');
     });
     // get job list
     var jobList = ``;

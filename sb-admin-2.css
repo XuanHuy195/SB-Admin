@@ -65,6 +65,14 @@
   pointer-events: none;
   opacity: 0.4;
 }
+.bg-nav {
+  background: rgba(255, 255, 255, 0.5);
+}
+.shadow-card:hover{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transform: translate(0,-10px);
+  transition: all 0.5s linear;
+}
 html {
   font-family: sans-serif;
   line-height: 1.15;
@@ -4501,6 +4509,8 @@ input[type="button"].btn-block {
   background-clip: border-box;
   border: 1px solid #e3e6f0;
   border-radius: 0.35rem;
+  transition: 0.5 linear;
+  cursor: pointer;
 }
 
 .card > hr {

@@ -1,349 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./sb-admin-2.css">
     <script src="https://kit.fontawesome.com/dd602692de.js" crossorigin="anonymous"></script>
-    <title>Document</title>
+    <title>Đăng nhập</title>
+    <style>
+    </style>
+  </head>
+  <body class="bg-gradient-primary">
+    <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-xl-10 col-lg-12 col-md-9">
+              <div class="card border-0 shadow-lg my-5">
+                <div class="card-body p-0">
+                  <div class="row">
+                    <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                    <div class="col-lg-6 position-relative">
+                      <div id="loading-animation" class="p-1 position-absolute rounded-pill w-100 d-none">
+                        <div class=" loading rounded-pill"></div>
+                      </div>
+                      <div id="loading" class="p-5">
+                        <div class="text-center">
+                          <h4 class="text-gray-900 mb-4">Chào mừng trở lại!</h4>
+                          <form class="user ">
+                            <div class="form-group">
+                              <input type="text" name="" id="phone" class="form-control form-control-user" placeholder="Nhập Số Điện Thoại..." >
+                            </div>
+                           
+                            <div id="error" class="small text-danger font-weight-bold d-none ">Số điện thoại không tồn tại!</div>
+                            <div class="form-group">
+                              <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" name="remember" id="customCheck">
+                                <label class="custom-control-label custom-control-label-user float-left" for="customCheck">Nhớ số điện thoại</label>
+                              </div>
+                            </div>
+                            <a href="#" id="login" class="btn btn-primary btn-block btn-user">Đăng nhập</a>
+                            <hr>
+                            </div>
+                            <div class="text-center">
+                              <a href="./Register.html" class="small">Đăng ký tài khoản</a>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+
+          </div>
+      </div>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="./js/list.js"></script>
-</head>
-<body>
-    <div class="m-1">
-        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-primary">
-            <a class="navbar-brand font-weight-bold" href="#">Thông tin khách hàng</a>
-            <button type="button" class="btn btn-info mr-2" data-toggle="modal" data-target="#myModal">
-                Thêm mới
-            </button>
-              <form class="form-inline my-2 my-lg-0 ">
-                <input id="search" class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search">
-              </form>
-              <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                  <li class="page-item"><a class="page-link" href="?CurrentPage=1&RowPerPage=100">1</a></li>
-                  <li class="page-item"><a class="page-link" href="?CurrentPage=2&RowPerPage=100">2</a></li>
-                  <li class="page-item"><a class="page-link" href="?CurrentPage=3&RowPerPage=100">3</a></li>
-                  <li class="page-item"><a class="page-link" href="?CurrentPage=4&RowPerPage=100">4</a></li>
-                </ul>
-              </nav>
-        </nav>
-        <div class="mb-5">NavBar</div>
-        <table id="table" class="table-sm table table-bordered table-hover mt-5">
-            <thead class="thead-dark small">
-                <th>Họ và tên</th>
-                <th>Điện thoại</th>
-                <th>Email</th>
-                <th>Nhóm</th>
-                <th>Số CMND</th>
-                <th>Ngày cấp</th>
-                <th>Nơi Cấp</th>
-                <th>Ngày Sinh</th>
-                <th>Địa chỉ liên hệ</th>
-                <th>Địa chỉ thường trú</th>
-                <th>Loại</th>
-                <th>Nguồn</th>
-                <th>Cấp độ</th>
-                <th>Mục đích</th>
-                <th>Ngày xử lý</th>
-                <th>Diễn giải</th>
-                <th>Nhân viên quản lý</th>
-            </thead>
-            <tbody id="body" class="small">
-                
-            </tbody>
-        </table>
-        <!-- The Modal -->
-        <div class="modal fade" id="myModal">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-
-                    <!-- Modal header -->
-                    <div class="modal-header">
-                        <h4 class="modal-title font-weight-bold text-uppercase text-gray-900">Thêm mới khách hàng</h4>
-                    </div>
-                    <!-- modal body -->
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <div class="d-flex justify-content-between">
-                                        <label for="firstNameNew">Họ tên đệm<span class="text-danger">*</span></label>
-                                        <label class="errFirstName text-danger d-none">Xin nhập họ tên đệm</label>
-                                    </div>
-                                    <input type="text" class="form-control" id="firstNameNew">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <div class="d-flex justify-content-between">
-                                        <label for="lastNameNew">Tên<span class="text-danger">*</span></label>
-                                        <label class="errLastName text-danger d-none">Xin nhập tên</label>
-                                    </div>
-                                    <input type="text" class="form-control" id="lastNameNew">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 ">
-                                <div class="form-group">
-                                    <div class="d-flex justify-content-between">
-                                        <label for="phoneNew">Điện thoại <span class="text-danger">*</span></label>
-                                        <label class="errPhone text-danger d-none">Xin nhập số điện thoại</label>
-                                    </div> 
-                                    <input type="text" class="form-control" id="phoneNew">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 ">
-                                <div class="form-group">
-                                    <div class="d-flex justify-content-between">
-                                        <label for="emailNew">Email <span class="text-danger">*</span></label>
-                                        <label class="errEmail text-danger d-none">Xin nhập địa chỉ email</label>
-                                    </div>
-                                    <input type="email" class="form-control" id="emailNew">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 ">
-                                <div class="form-group">
-                                    <label for="positionNew">Chức vụ</span></label>
-                                    <input type="text" class="form-control" id="positionNew" >
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label for="iDNoNew">CMND</label>
-                                    <input type="text" class="form-control" id="iDNoNew">
-                                </div>
-                           
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label for="dateOfIssueNew">Ngày cấp CMND</label>
-                                    <input type="text" class="form-control" id="dateOfIssueNew">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label for="placeOfIssueNew">Nơi cấp CMND</label>
-                                    <input type="text" class="form-control" id="placeOfIssueNew">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label for="dataOfBirthNew">Ngày Sinh</label>
-                                    <input type="text" class="form-control" id="dataOfBirthNew">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label for="levelNew">Cấp độ</label>
-                                    <input type="text" id="levelNew" class="form-control" >
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="form-group">
-                                    <label for="address1New">Địa chỉ thường trú</label>
-                                    <input type="text" id="address1New" class="form-control" >
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="form-group">
-                                    <label for="address2New">Địa chỉ liên hệ</label>
-                                    <input type="text" id="address2New" class="form-control" >
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label for="companyNameNew">Tên công ty </label>
-                                    <input type="text" id="companyNameNew" class="form-control" >
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label for="companyTaxCodeNew">Mã số thuế công ty</label>
-                                    <input type="text" id="companyTaxCodeNew" class="form-control" >
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="form-group">
-                                    <label for="companyAddressNew">Địa chỉ công ty</label>
-                                    <input type="text" id="companyAddressNew" class="form-control">
-                                </div>
-                            </div>
-                           <div class="col-lg-6">
-                               <div class="form-group">
-                                   <label for="jobId">Loại khách hàng</label>
-                                   <select id="jobId" class="form-control form-control-lg">
-                                   </select>
-                               </div>
-                           </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label for="groupId">Nhóm khách hàng</label>
-                                    <select id="groupId" class="form-control form-control-lg">
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                    <!-- modal footer -->
-                    <div class="modal-footer d-flex justify-content-center">
-                            <div id="submit" class="btn btn-primary">Lưu</div>
-                            <div class="btn btn-danger exit" data-dismiss="modal">Thoát</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-         <!-- end Modal -->
-        <div class="modal fade" id="detailModal">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-
-                    <!-- Modal header -->
-                    <div class="modal-header">
-                        <h4 class="modal-title font-weight-bold text-uppercase text-gray-900">Chỉnh sửa thông tin khách hàng</h4>
-                    </div>
-                    <!-- modal body -->
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <div class="d-flex justify-content-between">
-                                        <label for="firstName">Họ tên đệm<span class="text-danger">*</span></label>
-                                        <label class="errFirstName text-danger d-none">Xin nhập họ tên đệm</label>
-                                    </div>
-                                    <input type="text" class="form-control" id="firstName" >
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <div class="d-flex justify-content-between">
-                                        <label for="lastName">Tên<span class="text-danger">*</span></label>
-                                        <label class="errLastName text-danger d-none">Xin nhập tên</label>
-                                    </div>
-                                    <input type="text" class="form-control" id="lastName">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 ">
-                                <div class="form-group">
-                                    <div class="d-flex justify-content-between">
-                                        <label for="phone">Điện thoại <span class="text-danger">*</span></label>
-                                        <label class="errPhone text-danger d-none">Xin nhập số điện thoại</label>
-                                    </div>
-                                    <input type="text" class="form-control" id="phone">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 ">
-                                <div class="form-group">
-                                    <div class="d-flex justify-content-between">
-                                        <label for="email">Email <span class="text-danger">*</span></label>
-                                        <label class="errEmail text-danger d-none">Xin nhập địa chỉ email</label>
-                                    </div>
-                                    <input type="email" class="form-control" id="email">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 ">
-                                <div class="form-group">
-                                    <label for="position">Chức vụ</span></label>
-                                    <input type="text" class="form-control" id="position">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label for="iDNo">CMND</label>
-                                    <input type="text" class="form-control" id="iDNo">
-                                </div>
-                           
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label for="dateOfIssue">Ngày cấp CMND</label>
-                                    <input type="text" class="form-control" id="dateOfIssue">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label for="placeOfIssue">Nơi cấp CMND</label>
-                                    <input type="text" class="form-control" id="placeOfIssue">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label for="dataOfBirth">Ngày Sinh</label>
-                                    <input type="text" class="form-control" id="dataOfBirth">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label for="level">Cấp độ</label>
-                                    <input type="text" id="level" class="form-control" >
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="form-group">
-                                    <label for="address1">Địa chỉ thường trú</label>
-                                    <input type="text" id="address1" class="form-control" >
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="form-group">
-                                    <label for="address2">Địa chỉ liên hệ</label>
-                                    <input type="text" id="address2" class="form-control" >
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label for="companyName">Tên công ty </label>
-                                    <input type="text" id="companyName" class="form-control" >
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label for="companyTaxCode">Mã số thuế công ty</label>
-                                    <input type="text" id="companyTaxCode" class="form-control" >
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="form-group">
-                                    <label for="companyAddress">Địa chỉ công ty</label>
-                                    <input type="text" id="companyAddress" class="form-control">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label for="jobId2">Loại khách hàng</label>
-                                    <select id="jobId2" class="form-control form-control-lg">
-                                    </select>
-                                </div>
-                            </div>
-                             <div class="col-lg-6">
-                                 <div class="form-group">
-                                     <label for="groupId2">Nhóm khách hàng</label>
-                                     <select id="groupId2" class="form-control form-control-lg">
-                                     </select>
-                                 </div>
-                             </div>
-                            
-                        </div>
-                        
-                    </div>
-                    <!-- modal footer -->
-                    <div class="modal-footer d-flex justify-content-center">
-                            <div id="update" class="btn btn-primary">Lưu</div>
-                            <div id="del" class="btn btn-danger">Xóa</div>
-                            <div class="btn btn-warning exit" data-dismiss="modal">Thoát</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-crossorigin="anonymous"></script>
-</body>
+    <script src="./js/Login.js"></script>
+  </body>
 </html>

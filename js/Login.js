@@ -70,7 +70,7 @@ $(document).ready(function () {
     }).then(function(response){
       localStorage.setItem('otpCode', otpCode);
       localStorage.setItem('idToken', response.idToken);
-      $(location).attr('href', './Index.html');
+      $(location).attr('href', './Home.html');
     }).catch(function(error){
       $("#loading-animation").addClass('d-none');
       $('#loading').removeClass('disabledbutton');
