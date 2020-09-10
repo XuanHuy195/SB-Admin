@@ -22,7 +22,7 @@ $(document).ready(function(){
             content += `
             <div class="col-lg-3 col-sm-6 col-md-6 col-6 my-2">
                 <div class="card shadow-card my-2 w-100 h-100">
-                    <img src="${element.ImageUrl}" class="card-img-top" style="width:100%"></img>
+                    <img src="${element.ImageUrl}" class="card-img-top" style="height:70%"></img>
                     <div class="card-body">
                         <h4 class="card-title text-primary">${element.Name}</h4>
                     </div>
@@ -31,5 +31,8 @@ $(document).ready(function(){
             `;
         });
         $('#cardProject').html(content);
+    }).catch(function(err){
+        alert('Hết thời gian sử dụng');
+        $(location).attr('href', './Index.html');
     });
 });
