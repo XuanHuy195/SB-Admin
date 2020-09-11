@@ -1,6 +1,5 @@
 
 $(document).ready(function(){
-
     var listProjectUrl = 'https://learn.landsoftapis.com/api/Project/GetAll?UID=1';
     var idToken = localStorage.getItem('idToken');
     var content = ``;
@@ -20,8 +19,8 @@ $(document).ready(function(){
         console.log(data);
         data.forEach(element => {
             content += `
-            <div class="col-lg-3 col-sm-6 col-md-6 col-6 my-2">
-                <div class="card shadow-card my-2 w-100 h-100">
+            <div  class="col-lg-3 col-sm-6 col-md-6 col-6 my-2">
+                <div id="${element.Id}" class="cardProject card shadow-card my-2 w-100 h-100">
                     <img src="${element.ImageUrl}" class="card-img-top" style="height:70%"></img>
                     <div class="card-body">
                         <h4 class="card-title text-primary">${element.Name}</h4>
@@ -31,8 +30,15 @@ $(document).ready(function(){
             `;
         });
         $('#cardProject').html(content);
+        $('.cardProject').on('click', function(){
+            localStorage.setItem('srcImg',$(this).children('img').attr('src'));
+            localStorage.setItem('Id', $(this).attr('id'));
+            $(location).attr('href', './detailProject.html');
+        });
+        $('#image').prop('src', localStorage.getItem('srcImg'));
     }).catch(function(err){
         alert('Hết thời gian sử dụng');
-        $(location).attr('href', './Index.html');
+        $(location).attr('href', './index.html');
     });
+    
 });

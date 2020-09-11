@@ -73,6 +73,10 @@
   transform: translate(0,-10px);
   transition: all 0.5s linear;
 }
+.iconCollapse {
+  content: '\f105';
+
+}
 html {
   font-family: sans-serif;
   line-height: 1.15;

@@ -30,7 +30,7 @@ $(document).ready(function () {
       .then(function (response) {
         localStorage.setItem('phone', phone);
         console.log("Success!");
-        $(location).attr('href', './ValidLogin.html');
+        $(location).attr('href', './validLogin.html');
       })
       .catch(function (error) {
         $("#loading-animation").addClass('d-none');
@@ -70,7 +70,7 @@ $(document).ready(function () {
     }).then(function(response){
       localStorage.setItem('otpCode', otpCode);
       localStorage.setItem('idToken', response.idToken);
-      $(location).attr('href', './Home.html');
+      $(location).attr('href', './home.html');
     }).catch(function(error){
       $("#loading-animation").addClass('d-none');
       $('#loading').removeClass('disabledbutton');
