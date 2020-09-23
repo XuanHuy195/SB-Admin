@@ -37,8 +37,8 @@ $(document).ready(function(){
         });
         $('#image').prop('src', localStorage.getItem('srcImg'));
     }).catch(function(err){
-        alert('Hết thời gian sử dụng');
-        $(location).attr('href', './index.html');
+        //alert('Hết thời gian sử dụng');
+        //$(location).attr('href', './index.html');
     });
     
 });
