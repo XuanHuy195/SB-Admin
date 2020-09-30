@@ -35,7 +35,7 @@ $(document).ready(function(){
             localStorage.setItem('Id', $(this).attr('id'));
             $(location).attr('href', './detailProject.html');
         });
-        $('#image').prop('src', localStorage.getItem('srcImg'));
+        $('.image').prop('src', localStorage.getItem('srcImg'));
     }).catch(function(err){
         //alert('Hết thời gian sử dụng');
         //$(location).attr('href', './index.html');
