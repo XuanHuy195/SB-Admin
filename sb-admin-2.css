@@ -73,6 +73,7 @@
   opacity: 0.5;
 }
 #carousel-custom .carousel-indicators li.active img {
+  border: 2px solid rgb(255, 123, 0);
   opacity: 1;
 }
 #carousel-custom .carousel-indicators li:hover img {
