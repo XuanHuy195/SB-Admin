@@ -46,7 +46,11 @@
 *::after {
   box-sizing: border-box;
 }
-
+.page-footer {
+  background-color: #484747;
+  border-top: 2px solid #D83F3A;
+  color: #b0b0b0;
+}
 #carousel-custom {
   margin: 20px auto;
   width: 100%;
