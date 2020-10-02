@@ -74,7 +74,7 @@
   outline: none;
   border: 0;
 }
-.support-phone:focus .support-mess:focus {
+.support-phone:focus, .support-mess:focus {
  outline: none;
 }
 .page-footer {
