@@ -1,0 +1,50 @@
+
+.header {
+    background-image: 
+    linear-gradient(to right bottom,rgba(65, 49, 2, .1), rgba(255, 0, 0, 0.178)),
+    url('./assets/background-detailItems.jpg');
+    background-position: top;
+    background-size: cover;
+    position: relative;
+    height: 95vh;
+    clip-path: polygon(100% 0, 100% 86%, 0 100%, 0 1%);
+}
+.header-text {
+    animation-name: header-text;
+    animation-duration: 2s;
+}
+.header-button {
+    animation-name: header-button;
+    animation-duration: 2s;
+}
+.btn-option {
+  font-size: 0.9rem;
+  border-radius: 0;
+  padding: 0.75rem 1rem;
+}
+@keyframes header-text {
+    0% {
+        opacity: 0;
+        transform: translate(0, -100px);
+    }
+    80% {
+        transform: translate(0, -20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+@keyframes header-button {
+    0% {
+        opacity: 0;
+        transform: translate(0, 100px);
+    }
+    80% {
+        transform: translate(0, 20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}

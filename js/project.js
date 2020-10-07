@@ -16,7 +16,7 @@ $(document).ready(function(){
         }
         return response.json();
     }).then(function(data){
-        console.log(data);
+        //console.log(data);
         data.forEach(element => {
             content += `
             <div  class="col-lg-3 col-sm-6 col-md-6 col-6 my-2">

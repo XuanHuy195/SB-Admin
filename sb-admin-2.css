@@ -46,6 +46,9 @@
 *::after {
   box-sizing: border-box;
 }
+.text-spacing {
+  letter-spacing: 10px;
+}
 .support-phone {
   position: fixed;
   right: 10px;
@@ -151,6 +154,7 @@
   content: '\f105';
 
 }
+/* handMake */
 html {
   font-family: sans-serif;
   line-height: 1.15;
