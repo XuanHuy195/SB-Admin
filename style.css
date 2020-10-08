@@ -1,4 +1,6 @@
-
+html {
+    scroll-behavior: smooth;
+}
 .header {
     background-image: 
     linear-gradient(to right bottom,rgba(65, 49, 2, .1), rgba(255, 0, 0, 0.178)),
@@ -7,7 +9,11 @@
     background-size: cover;
     position: relative;
     height: 95vh;
-    clip-path: polygon(100% 0, 100% 86%, 0 100%, 0 1%);
+    clip-path: polygon(0 0, 100% 0, 100% 93%, 0 100%);
+}
+.bg-img {
+    background: rgb(36,27,0);
+    background: linear-gradient(0deg, rgba(36,27,0,.8) 20%, rgba(255,255,255,0) 100%);
 }
 .header-text {
     animation-name: header-text;

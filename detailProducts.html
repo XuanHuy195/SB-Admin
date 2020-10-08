@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./sb-admin-2.css">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./owl.carousel.min.css">
     <title>Công ty phần mềm DIP Vietnam - Tư vấn giải pháp quản lý doanh nghiệp - DIP Vietnam</title>
     <link rel="icon" type="image/x-icon" href="./assets/66709054-home-icon-home-website-button-on-white-background-.jpg">
 </head>
 <body>
-    <nav class="navbar navbar-light navbar-expand-lg bg-nav fixed-top">
+    <nav class="navbar navbar-light navbar-expand-lg bg-nav fixed-top mb-4">
         <a href="#" class="navbar-brand"><img src="./assets/dipvietnam.png" width="200" height="50" alt="Logo"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
             <span class="navbar-toggler-icon"></span>
@@ -32,17 +33,59 @@
         </div>
     </nav>
     <div class="header d-flex flex-column align-items-center justify-content-center">
-        <h2 class="text-light text-uppercase font-weight-bold text-spacing header-text"> Landmark 81</h2>
+        <h2 class="text-light text-uppercase font-weight-bold text-spacing-header header-text"> Landmark 81</h2>
         <br>
-        <button class="text-light text-uppercase btn btn-option border-success header-button">Chọn khu nhà</button>
+        <a href="#blocks"  class="text-light text-uppercase btn btn-option border-success header-button">Chọn khu nhà</a>
+    </div>
+    <div id="blocks" class="mx-4 mb-4 p-4">
+        <h5 class="text-primary text-uppercase font-weight-bold text-spacing mb-2">Eat and stay like a local</h5>
+        <h2 class="font-weight-bold  text-gray-900">Our blocks</h2>
+    </div>
+    <div class="container mb-5">
+        <div  class="owl-carousel owl-theme loop">
+            <div class="card img-fluid mr-3 mt-2 card-blocks">
+                <img class="card-img-top " src="./assets/img-example/anthony-delanoix-Q0-fOL2nqZc-unsplash.jpg" alt="">
+                <div class="card-img-overlay text-light bg-img">
+                    <h6 class="text-uppercase font-weight-bolder text-spacing">Paris</h6>
+                    <p class="card-text text-sm card-text">Artist capital of Europe</p>
+                </div>
+            </div>
+            <div class="card img-fluid mr-3 mt-2 card-blocks">
+                <img class="card-img-top" src="./assets/img-example/charlie-gallant-I0TFurj83AY-unsplash.jpg" alt="">
+                <div class="card-img-overlay text-light bg-img">
+                    <h6 class="text-uppercase font-weight-bolder text-spacing">Israel</h6>
+                    <p class="card-text text-sm card-text">City of hundred towers</p>
+                </div>
+            </div>
+            <div class="card img-fluid mr-3 mt-2 card-blocks">
+                <img class="card-img-top" src="./assets/img-example/fredy-martinez-frd7WNzipdU-unsplash.jpg" alt="">
+                <div class="card-img-overlay text-light bg-img">
+                    <h6 class="text-uppercase font-weight-bolder text-spacing">VietNam</h6>
+                    <p class="card-text text-sm card-text">The top Country  of travel </p>
+                </div>
+            </div>
+            <div class="card img-fluid mr-3 mt-2 card-blocks">
+                <img class="card-img-top" src="./assets/img-example/charles-postiaux-e3pwUtMN-_s-unsplash.jpg" alt="">
+                <div class="card-img-overlay text-light bg-img">
+                    <h6 class="text-uppercase font-weight-bolder text-spacing">Island</h6>
+                    <p class="card-text text-sm card-text">City of hundred towers</p>
+                </div>
+            </div>
+            <div class="card img-fluid mr-3 mt-2 card-blocks">
+                <img class="card-img-top" src="./assets/img-example/darcey-beau-wD1gm2Vwc5I-unsplash.jpg" alt="">
+                <div class="card-img-overlay text-light bg-img">
+                    <h6 class="text-uppercase font-weight-bolder text-spacing">Dubai</h6>
+                    <p class="card-text text-sm card-text">Dalí, Gaudí, Barrio Gotico</p>
+                </div>
+            </div>
+        </div>
+        
     </div>
 
 
 
 
-
-
-    <div class="page-footer pt-5">
+    <div class="page-footer pt-5 ">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
@@ -155,7 +198,7 @@
             </button>
         </div>
     </div>
-
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/dd602692de.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -167,5 +210,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
+    <script src="./js/owl.carousel.min.js"></script>
+    <script src="./js/detailProduct.js"></script>
 </body>
 </html>

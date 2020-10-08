@@ -46,7 +46,13 @@
 *::after {
   box-sizing: border-box;
 }
+.img-rounded{
+  border-radius: 5px;
+}
 .text-spacing {
+  letter-spacing: 3px;
+}
+.text-spacing-header {
   letter-spacing: 10px;
 }
 .support-phone {
@@ -144,6 +150,10 @@
 }
 .bg-nav {
   background: rgba(255, 255, 255, 0.5);
+}
+.card-blocks:hover {
+  transform: translate(0, -5px);
+  transition: 0.5s;
 }
 .shadow-card:hover{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -4683,7 +4693,7 @@ input[type="button"].btn-block {
 
 .card-img-overlay {
   position: absolute;
-  top: 0;
+  top: 1;
   right: 0;
   bottom: 0;
   left: 0;
@@ -9662,7 +9672,8 @@ button.bg-dark:focus {
 }
 
 .font-weight-bolder {
-  font-weight: bolder !important;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800 !important;
 }
 
 .font-italic {
