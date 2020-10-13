@@ -28,6 +28,9 @@ html {
   border-radius: 0;
   padding: 0.75rem 1rem;
 }
+.bg-content {
+    background-color: #f8f9fa !important;
+}
 @keyframes header-text {
     0% {
         opacity: 0;

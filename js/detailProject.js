@@ -1,6 +1,7 @@
 
 $(document).ready(function(){
   var listProjectUrl = 'https://learn.landsoftapis.com/api/Project/GetAll?UID=1';
+  var id = localStorage.getItem('projectId');
   var idToken = localStorage.getItem('idToken');
   var content = ``;
   fetch(listProjectUrl, {
@@ -69,6 +70,6 @@ $(document).ready(function(){
     })
    
     $('#items').on('click', function(){
-        
+    
     })
 })

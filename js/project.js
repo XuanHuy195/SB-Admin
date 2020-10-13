@@ -32,7 +32,7 @@ $(document).ready(function(){
         $('#cardProject').html(content);
         $('.cardProject').on('click', function(){
             localStorage.setItem('srcImg',$(this).children('img').attr('src'));
-            localStorage.setItem('Id', $(this).attr('id'));
+            localStorage.setItem('projectId', $(this).attr('id'));
             $(location).attr('href', './detailProject.html');
         });
         $('.image').prop('src', localStorage.getItem('srcImg'));
