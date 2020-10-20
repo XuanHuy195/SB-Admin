@@ -53,34 +53,43 @@ $(document).ready(function() {
             var content =``;
             data.FilterData.forEach(element => {
                 content += `
-                <div class="col-lg-1 col-md-2 col-auto m-1 " style="background-color:${element.StatusColor}; color:${element.TextColor};" >
-                    <span >${element.Status}</span><br>
+                <div class="col-lg-1 col-md-2 col-auto m-1 " style="background-color:${element.StatusColor}; color:${element.TextColor};font-size:0.8em" role="button" data-toggle="modal" data-target="#infoRoom">
+                    <span class="font-weight-bold">${element.Status}</span><br>
+                    <span>Diện tích: ${element.Rate}</span><br>
+                    <span >Số tiền: ${element.Amount}</span>
+                </div>
+                <div class="col-lg-1 col-md-2 col-auto m-1 " style="background-color:${element.StatusColor}; color:${element.TextColor};font-size:0.8em" role="button" data-toggle="modal" data-target="#infoRoom">
+                    <span class="font-weight-bold">${element.Status}</span><br>
+                    <span>Diện tích: ${element.Rate}</span><br>
                     <span >Số Tiền: ${element.Amount}</span>
                 </div>
-                <div class="col-lg-1 col-md-2 col-auto m-1 " style="background-color:${element.StatusColor}; color:${element.TextColor};" >
-                    <span >${element.Status}</span><br>
+                <div class="col-lg-1 col-md-2 col-auto m-1 " style="background-color:${element.StatusColor}; color:${element.TextColor};font-size:0.8em" role="button" data-toggle="modal" data-target="#infoRoom">
+                    <span class="font-weight-bold">${element.Status}</span><br>
+                    <span>Diện tích: ${element.Rate}</span><br>
                     <span >Số Tiền: ${element.Amount}</span>
                 </div>
-                <div class="col-lg-1 col-md-2 col-auto m-1 " style="background-color:${element.StatusColor}; color:${element.TextColor};" >
-                    <span >${element.Status}</span><br>
+                <div class="col-lg-1 col-md-2 col-auto m-1 " style="background-color:${element.StatusColor}; color:${element.TextColor};font-size:0.8em" role="button" data-toggle="modal" data-target="#infoRoom">
+                    <span class="font-weight-bold">${element.Status}</span><br>
+                    <span>Diện tích: ${element.Rate}</span><br>
                     <span >Số Tiền: ${element.Amount}</span>
                 </div>
-                <div class="col-lg-1 col-md-2 col-auto m-1 " style="background-color:${element.StatusColor}; color:${element.TextColor};" >
-                    <span >${element.Status}</span><br>
+                <div class="col-lg-1 col-md-2 col-auto m-1 " style="background-color:${element.StatusColor}; color:${element.TextColor};font-size:0.8em" role="button" data-toggle="modal" data-target="#infoRoom">
+                    <span class="font-weight-bold">${element.Status}</span><br>
+                    <span>Diện tích: ${element.Rate}</span><br>
                     <span >Số Tiền: ${element.Amount}</span>
                 </div>
-                <div class="col-lg-1 col-md-2 col-auto m-1 " style="background-color:${element.StatusColor}; color:${element.TextColor};" >
-                    <span >${element.Status}</span><br>
-                    <span >Số Tiền: ${element.Amount}</span>
-                </div>
-                <div class="col-lg-1 col-md-2 col-auto m-1 " style="background-color:${element.StatusColor}; color:${element.TextColor};" >
-                    <span >${element.Status}</span><br>
+                <div class="col-lg-1 col-md-2 col-auto m-1 " style="background-color:${element.StatusColor}; color:${element.TextColor};font-size:0.8em" role="button" data-toggle="modal" data-target="#infoRoom">
+                    <span class="font-weight-bold">${element.Status}</span><br>
+                    <span>Diện tích: ${element.Rate}</span><br>
                     <span >Số Tiền: ${element.Amount}</span>
                 </div>
                 
                 `
             })
             $('#allRooms').html(content);
+
+        }).then(function(err){
+            console.log(err);
         })
     
     })
