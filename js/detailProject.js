@@ -46,8 +46,7 @@ $(document).ready(function(){
       $(this).children('.fas').toggleClass('fa-angle-down fa-angle-up');
   }); 
 
-  var Id = localStorage.getItem('Id');
-    var cateId;
+     var Id = localStorage.getItem('Id');
     var contentUrl = 'https://learn.landsoftapis.com/api/Project/GetContent?Id='+ Id +'&CateId=1';
 
     fetch(contentUrl, {

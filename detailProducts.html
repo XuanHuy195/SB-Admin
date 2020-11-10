@@ -37,12 +37,13 @@
         <br>
         <a href="#blocks"  class="text-light text-uppercase btn btn-option border-success header-button">Chọn khu nhà</a>
     </div>
-    <div id="blocks" class="mx-4 mb-4 p-4">
+    <div id="blocks" class="mx-4 mb-5 p-4">
         <h5 class="text-primary text-uppercase font-weight-bold text-spacing mb-2">Eat and stay like a local</h5>
         <h2 class="font-weight-bold  text-gray-900">Our blocks</h2>
     </div>
-    <div class="container mb-5">
-        <div id="products" class="owl-carousel owl-theme loop">
+    <a href="#allRooms" id="products" class="container mb-5 d-inline-flex text-decoration-none">
+            
+        <!-- <div class="owl-carousel owl-theme loop">
             <a href="#allRooms" id="1" class="card img-fluid mr-3 mt-2 card-blocks">
                 <img class="card-img-top " src="./assets/img-example/anthony-delanoix-Q0-fOL2nqZc-unsplash.jpg" alt="">
                 <div  class="card-img-overlay text-light bg-img">
@@ -78,20 +79,15 @@
                     <p class="card-text text-sm card-text">Dalí, Gaudí, Barrio Gotico</p>
                 </div>
             </a>
-        </div>
-    </div>
+        </div> -->
+    </a>
     <div class="container-fluid bg-content">
         <div class="p-4 mb-4">
             <h5 class="text-uppercase text-danger font-weight-bold text-spacing">Hurry up, these are expiring soon</h5>
             <nav class="navbar navbar-expand-lg mb-4 d-lg-flex d-sm-block">
                 <h2 class="font-weight-bold text-gray-900 mr-4">Our rooms</h2>
-                <div class="row">
-                <div class="p-1 m-3 text-gray-900 bg-warning"><span>Khóa (0)</span></div>
-                <div class="p-1 m-3 text-gray-900 bg-danger"><span>Mở bán (10)</span></div>
-                <div class="p-1 m-3 text-gray-900 bg-success"><span>Giữ chỗ (2)</span></div>
-                <div class="p-1 m-3 text-gray-900 bg-primary"><span>Đặt cọc (3)</span></div>
-                <div class="p-1 m-3 text-gray-900 bg-info"><span>Góp vốn (20)</span></div>
-                <div class="p-1 m-3 text-gray-900 bg-warning"><span>Mua bán (20)</span></div>
+                <div id="countRooms" class="row">
+                
                 </div>
             </nav>
             <div id="infoRoom" class="modal fade" role="dialog">
@@ -133,18 +129,15 @@
                                     
                                 </div>
                             </div>
-                            <div class="col-lg-6 p-1 d-flex flex-column align-items-center ">
+                            <div class="col-lg-6 p-1 d-flex flex-column">
                                 <div class="modal-header">
                                     <h5 class="text-gray-900 font-weight-bold  my-3">Thông tin chi tiết</h5>
                                 </div>
-                                <div class="modal-body text-gray-700">
-                                    <span>- Diện tích là: 70m2, thiết kế hiện đại, thông thoáng, 2 phòng ngủ, 1 nhà vệ sinh. </span><br>
-                                    <span>- Khu dân cư hiện đại, vị trí mặt tiền chung cư, an ninh tốt.</span><br>
-                                    <span>- Giá thuê trên đã bao gồm phí quản lí. </span><br>
-                                    <span>- Dọn vào ở ngay - Giao dịch nhanh chóng. </span>
+                                <div id="detailRoom" class="modal-body text-gray-700">
+                               
                                 </div>
                                 <div class="modal-footer">
-                                    <button class="btn btn-primary">Mua Ngay</button>
+                                    <button id="buyNow" class="btn btn-primary">Mua Ngay</button>
                                     <button class="btn btn-danger" data-dismiss="modal">Thoát</button>
                                 </div>
                             </div>
@@ -152,7 +145,7 @@
                     </div>
                 </div>
             </div>
-            <div id="allRooms" class="row m-0 p-0">
+            <div id="allRooms" class="row m-0 p-0 d-flex">
                 <div class="d-lg-flex d-sm-block">
                     <img class="" src="./assets/smile.jpg" alt="">
                     <h3 class="p-4 font-weight-bold text-gray-900">Hãy chọn phân khu để biết thông tin chi tiết <a href="#blocks"><i class="fas fa-angle-double-right"></i></a></h3>
@@ -161,8 +154,6 @@
         </div>
         
     </div>
-
-
 
 
     <div class="page-footer pt-5 ">
@@ -270,12 +261,7 @@
                     2002 - 2020 @ DIP Vietnam. ALL Rights Reserved.
                 </div>
             </div>
-            <button class="support-phone">
-                <i class="fas fa-phone-alt" style='font-size:24px;color:white'></i>
-            </button>
-            <button class="support-mess">
-                <i class="fab fa-facebook-messenger" style='font-size:24px;color:white'></i>
-            </button>
+            
         </div>
     </div>
     
