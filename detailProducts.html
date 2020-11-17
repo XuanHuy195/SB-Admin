@@ -11,7 +11,7 @@
 </head>
 <body>
     <nav class="navbar navbar-light navbar-expand-lg bg-nav fixed-top mb-4">
-        <a href="#" class="navbar-brand"><img src="./assets/dipvietnam.png" width="200" height="50" alt="Logo"></a>
+        <a href="home.html" class="navbar-brand"><img src="./assets/dipvietnam.png" width="200" height="50" alt="Logo"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -24,10 +24,10 @@
                     <a href="customer.html" class="nav-link text-gray-900">Khách hàng</a>
                 </li>
                 <li class="nav-item">
-                    <a href="index.html" class="btn btn-primary mr-2 mb-sm-2 mb-2 text-white">Đăng nhập</a>
+                    <a href="index.html" class="nav-link mr-2 mb-sm-2 mb-2  text-gray-900">Đăng nhập</a>
                 </li>
                 <li class="nav-item">
-                    <a href="register.html" class="btn btn-success text-white">Đăng ký</a>
+                    <a href="register.html" class="nav-link  text-gray-900">Đăng ký</a>
                 </li>
             </ul>
         </div>
@@ -133,10 +133,19 @@
                                 <div class="modal-header">
                                     <h5 class="text-gray-900 font-weight-bold  my-3">Thông tin chi tiết</h5>
                                 </div>
-                                <div id="detailRoom" class="modal-body text-gray-700">
                                
+                                <div id="detailRoom" class="modal-body text-gray-700">
+                                    
                                 </div>
-                                <div class="modal-footer">
+                                <div class="row d-flex justify-content-center">
+                                    <div id="info" class=" px-3 m-2 border-hover" role="button">
+                                        <i class='fab fa-amazon-pay' style='font-size:24px;color:black'></i>
+                                    </div>
+                                    <div id="payMents" class="px-3 m-2" role="button">
+                                        <i class='fas fa-universal-access' style='font-size:24px;color:black'></i>
+                                    </div>
+                                </div>
+                                <div class="modal-footer" >
                                     <button id="buyNow" class="btn btn-primary">Mua Ngay</button>
                                     <button class="btn btn-danger" data-dismiss="modal">Thoát</button>
                                 </div>
@@ -276,6 +285,7 @@
     <script src="./js/detailProduct.js"></script>
     <script src="./js/owl.carousel.min.js"></script>
     <script src="./js/owlCarousel.js"></script>
+    <script src="./js/detailProject.js"></script>
     
     
 </body>

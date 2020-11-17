@@ -45,7 +45,9 @@ $(document).ready(function() {
             return response.json();
         }).then(function(response){
             var data = response.Data[0].Items;
-            var content =``;
+            var floor = response.Data[0].GroupName;
+            
+            var content =`<div class="col-lg-12 col-md-12 col-12 font-weight-bold text-gray-800">${floor}</div><br/>`;
             var countRoom = ``;
             var countStatus1 = 0;
             var countStatus2 = 0;
@@ -98,8 +100,7 @@ $(document).ready(function() {
             $('#allRooms').html(content);
 
             
-
-        }).then(function(err){
+        }).catch(function(err){
             console.log(err);
         })
     
@@ -117,7 +118,7 @@ $(document).ready(function() {
         }
     }).then(function(response){
         if(response.status != 200) {
-            throw Err(response.status)
+            throw Error(response.status)
         }
         return response.json();
     }).then(function(data){
@@ -130,10 +131,15 @@ $(document).ready(function() {
             <div>-Khu: ${data.ZoneName}</div><br>
             `
         $('#detailRoom').html(detailContent);
-
-        $('#buyNow').on('click', function(){
+        $("#info").on('click', function(){
+            $("#payMents").removeClass("border-hover");
+            $("#info").addClass("border-hover");
+            $('#detailRoom').html(detailContent);
+        })
+        $('#payMents').on('click', function(){
+            $(this).addClass("border-hover");
+            $("#info").removeClass("border-hover");
             var listPay = data.Payments;
-
             var payment = `<h4>Thông tin thanh toán</h4>`;
             for(var i=0 ; i<listPay.length; i++){
                 payment += `
@@ -146,7 +152,9 @@ $(document).ready(function() {
             }
             $('#detailRoom').html(payment);
         })
-    }).then(function(err){
+        
+        
+    }).catch(function(err){
         console.log(err);
     })
    

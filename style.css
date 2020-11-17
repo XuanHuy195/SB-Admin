@@ -31,6 +31,7 @@ html {
 .bg-content {
     background-color: #f8f9fa !important;
 }
+
 @keyframes header-text {
     0% {
         opacity: 0;
