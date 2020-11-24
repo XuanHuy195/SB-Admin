@@ -18,12 +18,14 @@ $(document).ready(function() {
         var content = ``;
         data.forEach(element => {
             content += `
-            <div class="cardProject card shadow-card my-2 w-50 h-50 mr-2 font-weight-bold">
-                <div class="card-body">
-                    <h4 class="card-title text-primary">KHU ${element.Name}</h4>
-                    <span>Tòa nhà landmark</span>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="cardProject card shadow-card my-2 mr-2 font-weight-bold">
+                        <div class="card-body ">
+                            <h4 class="card-title text-primary">KHU ${element.Name}</h4>
+                            <span>Tòa nhà landmark</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
             `
         });
        $('#products').html(content);
@@ -81,10 +83,12 @@ $(document).ready(function() {
                   };
                
                 content += `
-                <div id="${element.Id}" class="col-lg-1 col-md-2 col-3 m-1" style="background-color:${element.StatusColor}; color:${element.TextColor};font-size:0.8em" role="button" data-toggle="modal" data-target="#infoRoom">
-                    <span class="font-weight-bold">${element.Code}</span><br>
-                    <span>${element.Area} m²</span><br>
-                   <span>${element.Total}</span>
+                <div class="col-lg-1 col-md-3 col-sm-3 col-4 p-0 ">
+                   <div id="${element.Id}" class="m-1" style="background-color:${element.StatusColor}; color:${element.TextColor};font-size:0.8em" role="button" data-toggle="modal" data-target="#infoRoom">
+                        <span class="font-weight-bold">${element.Code}</span><br>
+                        <span>${element.Area} m²</span><br>
+                        <span>${element.Total}</span>
+                   </div>
                 </div>
                 `
             })
