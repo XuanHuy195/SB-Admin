@@ -88,6 +88,7 @@ $(document).ready(function() {
                         <span class="font-weight-bold">${element.Code}</span><br>
                         <span>${element.Area} m²</span><br>
                         <span>${element.Total}</span>
+                        
                    </div>
                 </div>
                 `
@@ -150,7 +151,8 @@ $(document).ready(function() {
                    <div class="d-flex text-gray-800">
                         <div class="m-3">Đợt: ${listPay[i].Stage}</div><br>
                         <div class="m-3">${listPay[i].Percentage}%</div><br>
-                        <div class="m-3">Số tiền: ${listPay[i].Total}</div><br>
+                        <div class="m-3">Số tiền:  ${ new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'VND' }).format(listPay[i].Total)}</div><br>
+                       
                    </div>
                 `;
             }
